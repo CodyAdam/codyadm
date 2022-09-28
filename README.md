@@ -1,11 +1,36 @@
-# Astro + React Example
+# My portfolio website
 
-```
-npm init astro -- --template framework-react
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/framework-react)
-
-This example showcases Astro working with [React](https://reactjs.org/).
-
-Write your React components as `.jsx` or `.tsx` files in your project.
+- 2021-02 Renergie                                                     
+- 2020-01-25 Esir game jam                                             
+- 2019-11-17 Hackathon « Insomnihack »                                 
+- 2021-10-14 Break the code by Sopra Steria                            
+- 2020-01 Projet Bloons TD                                             
+- 2019-12 Advent of code                                               
+- 2020-12 Advent of code                                               
+- 2021-12 Advent of code                                               
+- 2021-02 Projet Chatbot                                               
+- 2019-10 projet DIE image recogn by machine learning                  
+- 2021-11-25 Orange CTF                                                
+- 2021-01-31 Hackathon par Sopra Steria Ghost AI                       
+- 2021-06 project TItac - online multiplayer board game                
+- 2020-03 Projet ADN match Custom Regexp searcher                      
+- 2019-10 Stéréogram générator                                         
+- 2018-04 Pong                                                         
+- 2018-10 Halloween Game Jam                                           
+- 2021-06 GMTK Game Jam DuctTape Boy                                   
+- 2018-11 Game Jam Cursor Trinity                                      
+- 2019-05-13 Game Jam 2d puzzle Platformer JamDNA                      
+- 2020-01-17 Game Jam 2D Cute Adventure Puzzle Game                    
+- 2019-12 Reversi Artificial Intelligence                              
+- 2022-01-28 Hackathon Challenge Digital Transformer                   
+- 2022-04-12 Laval Virtual Europe 2022                                 
+- 2021-03 Dofus OCR Sniffer                                            
+- 2022-04-25 SWERC 2022 itali                                          
+- 2021-09-20 Dofus Packet Sniffer                                      
+- 2022-04-20 Ants simulator C++                                        
+- 2022-05-25 Audio-Mixing C++ tool                                     
+- 2022-05-19 Esir Prog2 GameJam                                        
+- 2022-06-02 Irkurk language translator                                
+- 2022-05 Time keeper                                                  
+- 2022-08 Chateau Du Hallay Project                                    
+- 2022-09 cdy.pw URL shortener                                         
