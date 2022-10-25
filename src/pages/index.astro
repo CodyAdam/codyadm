@@ -8,14 +8,15 @@ let projects = await Astro.glob('./projects/*.md');
 ---
 
 <MainLayout>
-  <div class='flex items-center justify-center font-display font-bold text-4xl h-44'>Cody Adam</div>
+  <div class='flex items-center justify-center font-display font-bold text-[5rem] h-96 text-primary'>Cody Adam</div>
+  <div class='flex items-center justify-center font-display font-bold text-2xl h-44'>This site is Work in progress</div>
   <h1 class='font-display flex items-center justify-center p-5'>Projects</h1>
   <div class='flex items-center justify-center'>
     <div class='container flex gap-5 flex-wrap items-center justify-center'>
       {
         projects.map((project) => {
           return (
-            <a href={project.url} class='btn w-fit btn-primary'>
+            <a href={project.url} class='btn w-fit'>
               {project.frontmatter.title}
             </a>
           );
