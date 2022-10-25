@@ -11,5 +11,16 @@ module.exports = {
 		extends: {
 		}
 	},
-	plugins: [require('@tailwindcss/forms')],
+	daisyui: {
+		themes: [{
+			custom: {
+				...require("daisyui/src/colors/themes")["[data-theme=cmyk]"],
+				primary: "#0ccb93",
+				"primary-content" : "#FFF",
+				"base-100": "#F7F7F7",
+				"accent-content": "#4e4e4e",
+			}
+		}],
+	},
+	plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require("daisyui")],
 }
