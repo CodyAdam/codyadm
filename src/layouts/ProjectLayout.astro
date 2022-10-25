@@ -1,9 +1,22 @@
 ---
-const { frontmatter } = Astro.props;
+import type { MarkdownLayoutProps } from 'astro';
 import '../global.css';
+
+type Props = MarkdownLayoutProps<{
+  title: string;
+  coAuthors: string[];
+  date: string;
+  sumary: string;
+  tags: string[];
+  value: number;
+  stack: string[];
+  thumbnails: string[];
+}>;
+
+const { frontmatter } = Astro.props;
 ---
 
-<html data-theme="custom">
+<html data-theme='custom'>
   <head>
     <meta charset='utf-8' />
     <meta name='viewport' content='width=device-width' />
@@ -14,9 +27,8 @@ import '../global.css';
   <body>
     <main class='bg-base-100 min-h-screen w-full p-10 flex items-center flex-col'>
       <div class='prose container'>
-        <a href="/">Back</a>
+        <a href='/'>Back</a>
         <h1>{frontmatter.title}</h1>
-        <p class='border-b'>{frontmatter.description}</p>
         <slot />
       </div>
     </main>

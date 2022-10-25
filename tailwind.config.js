@@ -16,7 +16,8 @@ module.exports = {
 			custom: {
 				...require("daisyui/src/colors/themes")["[data-theme=cmyk]"],
 				primary: "#0ccb93",
-				"primary-content" : "#FFF",
+				"primary-content": "#FFF",
+				"base-content" : "#4e4e4e",
 				"base-100": "#F7F7F7",
 				"accent-content": "#4e4e4e",
 			}
