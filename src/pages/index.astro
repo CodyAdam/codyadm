@@ -3,8 +3,22 @@ import MainPage from '../layouts/MainPage.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
+
+let projects = await Astro.glob('./projects/*.md');
 ---
 
 <MainPage>
-  <h1 class="font-display">Counter</h1>
+  <div class='flex items-center justify-center font-display font-bold text-4xl h-44'>Cody Adam</div>
+  <h1 class="font-display flex items-center justify-center p-5">Projects</h1>
+  <div class='flex gap-5 flex-col items-center justify-center'>
+    {
+      projects.map((project) => {
+        return (
+          <a href={project.url} class='btn w-fit btn-primary'>
+            {project.frontmatter.title}
+          </a>
+        );
+      })
+    }
+  </div>
 </MainPage>
