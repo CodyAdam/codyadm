@@ -12,6 +12,8 @@ type Props = MarkdownLayoutProps<{
   stack: string[] | null;
   thumbnails: string[] | null;
   hide: boolean | null;
+  rank: number | null;
+  repo: string | null;
 }>;
 
 const { frontmatter } = Astro.props;
@@ -35,7 +37,7 @@ if (frontmatter.date) {
         <a href='/' class='btn btn-primary w-fit'>Back</a>
         <div class='my-8'>
           <h1 class='text-5xl text-primary mb-0'>{frontmatter.title}</h1>
-          <p>{new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date)}</p>
+          <p>{new Intl.DateTimeFormat('en-US', { month: "long", year: 'numeric' }).format(date)}</p>
           <div class='avatar-group -space-x-5 overflow-visible'>
             <div class='tooltip tooltip-bottom' data-tip={'Cody Adam (me)'}>
               <div class='avatar shadow-md'>
