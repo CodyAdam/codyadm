@@ -1,9 +1,11 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Stéréogram générator
+title: Stereogram Generator
 date: 2019/10
-sumary: ~
-tags: ~
-value: ~
+sumary: Create a stereogram with a picture and a depth map.
+tags: 
+  - python
+  - stereogram
+value: 2
 thumbnails: ~
 ---

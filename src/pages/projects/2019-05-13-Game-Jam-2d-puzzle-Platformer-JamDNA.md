@@ -6,4 +6,5 @@ sumary: ~
 tags: ~
 value: ~
 thumbnails: ~
+hide: true
 ---

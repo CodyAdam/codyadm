@@ -1,17 +1,16 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Advent of code 2019
-date: 2019/12
+title: Advent of code 2015
+date: 2015/12
 sumary: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 tags: 
   - challenge
   - problem solving
   - python
-value: 2
+value: 1
 thumbnails: 
-  - /img/aoc2019.png
+  - /img/aoc1.png
 ---
-
 
 # What is Advent of code?
 
@@ -23,8 +22,15 @@ You don't need a computer science background to participate - just a little prog
 
 # My experience
 
-There is 25 level with 2 points to gain on each
+[My solutions](https://github.com/CodyAdam/puzzle__advent-of-code-2015)
 
-I did 14/50 points this year
+| day | time solved | personal difficulty |
+| --- | ----------- | ------------------- |
+| 1   | 4 min       | 🌘🌚🌚                 |
+| 2   | 8 min       | 🌘🌚🌚                 |
+| 3   | 8 min       | 🌘🌚🌚                 |
+| 4   | 8 min       | 🌗🌚🌚                 |
+| 5   | 17 min      | 🌗🌚🌚                 |
+| 6   | 18 min      | 🌗🌚🌚                 |
 
-![](/img/aoc2019.png)
+![](/img/aoc2015.png)
