@@ -9,7 +9,7 @@ tags:
   - python
 value: 4
 thumbnails: 
-  - /img/aoc2020.png
+  - /md/aoc2020.png
 ---
 
 
@@ -29,4 +29,4 @@ There is 25 level with 2 points to gain on each
 
 I did 14/50 points this year
 
-![](/img/aoc2019.png)
+![](/md/aoc2019.png)

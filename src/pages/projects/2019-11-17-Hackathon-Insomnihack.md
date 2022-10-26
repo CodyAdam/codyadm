@@ -16,12 +16,12 @@ coauthors:
   - Thomas Delapart
   - Victor Denis
 thumbnails: 
-  - /img/inso1.jpg
+  - /md/inso1.jpg
 ---
 
 # What is Insomni'Hack 3.0?
 
-![](/img/inso1.jpg)
+![](/md/inso1.jpg)
 
 From Friday, October 11 2019, 5:30 p.m. to Saturday, October 12 2019, 8 p.m. at ISTIC, Rennes, France.
 

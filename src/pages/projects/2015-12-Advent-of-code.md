@@ -9,7 +9,7 @@ tags:
   - python
 value: 1
 thumbnails: 
-  - /img/aoc1.png
+  - /md/aoc1.png
 ---
 
 # What is Advent of code?
@@ -33,4 +33,4 @@ You don't need a computer science background to participate - just a little prog
 | 5   | 17 min      | 🌗🌚🌚                 |
 | 6   | 18 min      | 🌗🌚🌚                 |
 
-![](/img/aoc2015.png)
+![](/md/aoc2015.png)
