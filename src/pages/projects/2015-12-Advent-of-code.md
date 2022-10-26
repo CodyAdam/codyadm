@@ -6,10 +6,13 @@ sumary: Advent of Code is an Advent calendar of small programming puzzles for a 
 tags: 
   - challenge
   - problem solving
+stack: 
   - python
 value: 1
 thumbnails: 
   - /md/aoc1.png
+hide: true
+repo: https://github.com/CodyAdam/puzzle__advent-of-code-2015
 ---
 
 # What is Advent of code?
@@ -22,7 +25,6 @@ You don't need a computer science background to participate - just a little prog
 
 # My experience
 
-[My solutions](https://github.com/CodyAdam/puzzle__advent-of-code-2015)
 
 | day | time solved | personal difficulty |
 | --- | ----------- | ------------------- |

@@ -1,11 +1,12 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Advent of code
+title: Advent of code 2020
 date: 2020/12
 sumary: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 tags: 
   - challenge
   - problem solving
+stack:
   - python
 value: 4
 thumbnails: 
@@ -23,7 +24,7 @@ You don't need a computer science background to participate - just a little prog
 
 # My experience
 
-[Github of my solutions](https://github.com/CodyAdam/puzzle__advent-of-code-2019)
+[My solutions](https://github.com/CodyAdam/puzzle__advent-of-code-2019)
 
 There is 25 level with 2 points to gain on each
 

@@ -7,6 +7,8 @@ tags:
   - challenge
   - hackathon
   - capgemini
+  - group project
+stack: 
   - c#
   - unity
 value: 4
