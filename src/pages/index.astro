@@ -1,10 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Frontmatter } from '../layouts/ProjectLayout.astro';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 
-let projects = await Astro.glob('./projects/*.md');
+let projects = await Astro.glob<Frontmatter>('./projects/*.md');
 projects = projects.filter((p) => !p.frontmatter.hide);
 ---
 

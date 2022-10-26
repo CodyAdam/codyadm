@@ -2,19 +2,20 @@
 import type { MarkdownLayoutProps } from 'astro';
 import '../global.css';
 
-type Props = MarkdownLayoutProps<{
-  title: string | null;
-  coauthors: string[] | null;
-  date: string | null;
-  sumary: string | null;
-  tags: string[] | null;
-  value: number | null;
-  stack: string[] | null;
-  thumbnails: string[] | null;
-  hide: boolean | null;
-  rank: number | null;
-  repo: string | null;
-}>;
+export type Frontmatter = {
+  title?: string;
+  coauthors?: string[];
+  date?: string;
+  sumary?: string;
+  tags?: string[];
+  value?: number;
+  stack?: string[];
+  thumbnails?: string[];
+  hide?: boolean;
+  rank?: number;
+  repo?: string;
+};
+type Props = MarkdownLayoutProps<Frontmatter>;
 
 const { frontmatter } = Astro.props;
 let date: null | Date = null;
@@ -35,10 +36,14 @@ if (frontmatter.date) {
     <main class='bg-base-100 min-h-screen w-full p-10 flex items-center flex-col'>
       <div class='prose container flex flex-col gap-5'>
         <a href='/' class='btn btn-primary w-fit'>Back</a>
-        <div class='my-8'>
+        <div class='my-8 flex flex-col gap-3'>
           <h1 class='text-5xl text-primary mb-0'>{frontmatter.title}</h1>
-          <p>{new Intl.DateTimeFormat('en-US', { month: "long", year: 'numeric' }).format(date)}</p>
-          <div class='avatar-group -space-x-5 overflow-visible'>
+          {
+            date && (
+              <p class='m-0'>{new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date)}</p>
+            )
+          }
+          <div class='avatar-group my-8 -space-x-5 overflow-visible'>
             <div class='tooltip tooltip-bottom' data-tip={'Cody Adam (me)'}>
               <div class='avatar shadow-md'>
                 <div class='w-12 rounded-full'>
@@ -46,7 +51,6 @@ if (frontmatter.date) {
                 </div>
               </div>
             </div>
-
             {
               frontmatter.coauthors &&
                 frontmatter.coauthors.map((author) => (
