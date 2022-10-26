@@ -7,6 +7,7 @@ tags:
   - automation
   - hacking
   - ocr
+  - tool
 stack:
   - tesseract
   - python

@@ -9,6 +9,7 @@ tags:
   - group project
   - automation
   - bot
+  - tool
 stack:
   - scala
   - swing

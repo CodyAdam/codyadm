@@ -6,6 +6,7 @@ sumary: Create a stereogram with a picture and a depth map.
 tags: 
   - stereogram
   - automation
+  - tool
 stack: 
   - python
   - opencv
