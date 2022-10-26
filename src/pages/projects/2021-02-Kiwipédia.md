@@ -16,13 +16,23 @@ stack:
 value: 4
 thumbnails: ~
 repo: https://github.com/CodyAdam/project__chatbot
+coauthors:
+  - Romain Briend
+  - Thomas Delapart
+  - Arthur Allain
+  - Zoé Costan
+  - Mael Gallou
+  - William Babin
+  - Thomas Banalouane
 ---
 
 
 This is a "smart" **Chatbot made using Scala and Swing** (for UI). Its name is "Kiwipédia". 
 
-This was a group project in team of 7. My role in the team was the **Scrum master** and the **devlopper of the UI**.
-We used the **SCRUM process** during which we made multiple iterations of the app.
+This was a group project in team of 8. My role in the team was the **Scrum master** and the **devlopper of the UI**.
+We used the **SCRUM process** during which we made multiple iterations of the app. 
+
+The project was done in 2 months.
 
 # Features
 

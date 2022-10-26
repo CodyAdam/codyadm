@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: Bloons TD Remake
 date: 2020/01
-sumary: A remake of the Bloons TD game made from scratch with Java and StdDraw
+sumary: This is a tower defense game inspired by BloonsTD written in Java. It features multiple levels and procedurally generated content
 tags: 
   - game
   - procedural generation

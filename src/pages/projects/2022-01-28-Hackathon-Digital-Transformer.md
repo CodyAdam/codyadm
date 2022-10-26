@@ -2,7 +2,7 @@
 layout: ../../layouts/ProjectLayout.astro
 title: Hackathon Digital Transformer
 date: 2022/01/28
-sumary: 
+sumary: We presented our innovation team project to a jury of Rennes Métropole in order to answer a need for the city.
 tags: 
   - challenge
   - hackathon
