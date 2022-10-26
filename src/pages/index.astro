@@ -17,8 +17,12 @@ projects = projects.filter((p) => !p.frontmatter.hide);
       {
         projects.map((project) => {
           return (
-            <a href={project.url} class='btn w-fit'>
-              {project.frontmatter.title}
+            <a href={project.url} class='card w-96 bg-base-100 hover:bg-base-200 transition-colors shadow-xl'>
+              <div class='card-body'>
+                <h2 class='card-title'>{project.frontmatter.title} </h2>
+                <p>{project.frontmatter.sumary}</p>
+                <div class="badge self-end">{project.frontmatter.date}</div>
+              </div>
             </a>
           );
         })
