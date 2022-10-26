@@ -1,12 +1,14 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Projet Chatbot
+title: Kiwipédia
 date: 2021/02
-sumary: 
+sumary: A desktop smart chatbot application with definitions, translations, TTS and more.
 tags: 
   - ai
   - scrum
   - group project
+  - automation
+  - bot
 stack:
   - scala
   - swing

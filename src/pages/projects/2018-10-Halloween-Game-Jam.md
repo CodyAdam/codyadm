@@ -6,6 +6,7 @@ sumary: A game made for the Halloween Game Jam 2018.
 tags: 
   - game
   - game jam
+  - graphic design
 stack:
   - unity
   - c#

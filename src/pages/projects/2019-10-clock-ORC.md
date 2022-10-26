@@ -4,8 +4,8 @@ title: Clock ORC
 date: 2019/10
 sumary: Image recognition tool by machine learning to recognize the time on a clock.
 tags: 
+  - automation
   - machine learning
-  - python
   - orc
 stack: 
   - python

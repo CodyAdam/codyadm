@@ -1,16 +1,17 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: In Afterlife - Weekly Game Jam 130
+title: In Afterlife
 date: 2020/01/17
 sumary: A game made for the Weekly Game Jam 130. The theme was "Dying is rewarded".
 tags: 
   - game
   - game jam
+  - graphic design
 stack:
   - unity
   - c#
   - illustrator
-value: 4
+value: 5
 thumbnails: 
   - https://img.itch.zone/aW1hZ2UvNTQ3MDc5LzUxNTc5MzIucG5n/347x500/GPcl10.png
 ---

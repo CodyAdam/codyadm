@@ -1,9 +1,18 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Break the code by Sopra Steria
+title: Break the code
 date: 2021/10/14
-sumary: ~
-tags: ~
-value: ~
+sumary: A problem solving programming contest for the 2021 edition of Break the Cody hosted by Sopra Steria.
+tags: 
+  - challenge
+  - problem solving
+  - group project
+stack: 
+  - python
+value: 4
+rank: 14/32
 thumbnails: ~
+coauthors: 
+  - Thomas Delapart
+  - Arthur Allain
 ---
