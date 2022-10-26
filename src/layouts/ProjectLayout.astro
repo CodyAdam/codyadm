@@ -3,17 +3,22 @@ import type { MarkdownLayoutProps } from 'astro';
 import '../global.css';
 
 type Props = MarkdownLayoutProps<{
-  title: string;
-  coAuthors: string[];
-  date: string;
-  sumary: string;
-  tags: string[];
-  value: number;
-  stack: string[];
-  thumbnails: string[];
+  title: string | null;
+  coauthors: string[] | null;
+  date: string | null;
+  sumary: string | null;
+  tags: string[] | null;
+  value: number | null;
+  stack: string[] | null;
+  thumbnails: string[] | null;
+  hide: boolean | null;
 }>;
 
 const { frontmatter } = Astro.props;
+let date: null | Date = null;
+if (frontmatter.date) {
+  date = new Date(frontmatter.date);
+}
 ---
 
 <html data-theme='custom'>
@@ -26,10 +31,37 @@ const { frontmatter } = Astro.props;
   </head>
   <body>
     <main class='bg-base-100 min-h-screen w-full p-10 flex items-center flex-col'>
-      <div class='prose container'>
-        <a href='/'>Back</a>
-        <h1>{frontmatter.title}</h1>
-        <slot />
+      <div class='prose container flex flex-col gap-5'>
+        <a href='/' class='btn btn-primary w-fit'>Back</a>
+        <div class='my-8'>
+          <h1 class='text-5xl text-primary mb-0'>{frontmatter.title}</h1>
+          <p>{new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date)}</p>
+          <div class='avatar-group -space-x-5 overflow-visible'>
+            <div class='tooltip tooltip-bottom' data-tip={'Cody Adam (me)'}>
+              <div class='avatar shadow-md'>
+                <div class='w-12 rounded-full'>
+                  <img class='p-0 m-0' src='/img/pp.png' />
+                </div>
+              </div>
+            </div>
+
+            {
+              frontmatter.coauthors &&
+                frontmatter.coauthors.map((author) => (
+                  <div class=' tooltip tooltip-bottom' data-tip={author}>
+                    <div class='avatar placeholder shadow-md'>
+                      <div class='bg-neutral-focus text-neutral-content rounded-full w-12'>
+                        <span class='select-none'>{author.slice(0, 2)}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))
+            }
+          </div>
+        </div>
+        <div>
+          <slot />
+        </div>
       </div>
     </main>
   </body>
