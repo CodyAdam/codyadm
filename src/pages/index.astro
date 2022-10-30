@@ -1,33 +1,11 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { Frontmatter } from '../layouts/ProjectLayout.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
-
-let projects = await Astro.glob<Frontmatter>('./projects/*.md');
-projects = projects.filter((p) => !p.frontmatter.hide);
+import Projects from '../components/Projects.astro';
 ---
 
 <MainLayout>
   <div class='flex items-center justify-center font-display font-bold text-[5rem] h-96 text-primary'>Cody Adam</div>
   <div class='flex items-center justify-center font-display font-bold text-2xl h-44'>This site is Work in progress</div>
   <h1 class='font-display flex items-center justify-center p-5'>Projects</h1>
-  <div class='flex items-center justify-center'>
-    <div class='container flex gap-5 flex-wrap items-center justify-center'>
-      {
-        projects.map((project) => {
-          return (
-            <a href={project.url} class='card w-96 bg-base-100 hover:bg-base-200 transition-colors shadow-xl'>
-              <div class='card-body'>
-                <h2 class='card-title'>{project.frontmatter.title} </h2>
-                <p>{project.frontmatter.sumary}</p>
-                <div class="badge self-end">{project.frontmatter.date}</div>
-              </div>
-            </a>
-          );
-        })
-      }
-    </div>
-  </div>
+  <Projects/>
 </MainLayout>

@@ -1,0 +1,20 @@
+---
+import ProjectCard, { Project } from './ProjectCard';
+import ProjectFilter from './ProjectFilter';
+
+let projects = await Astro.glob<Project>('../pages/projects/*.md');
+projects = projects.filter((p) => !p.frontmatter.hide);
+---
+
+<div class='flex justify-center'>
+  <div class=' container flex flex-col justify-center items-center'>
+    <!-- <ProjectFilter client:idle/> -->
+    <div class='flex gap-5 flex-wrap items-center justify-between'>
+      {
+        projects.map((project) => {
+          return <ProjectCard project={project} />;
+        })
+      }
+    </div>
+  </div>
+</div>

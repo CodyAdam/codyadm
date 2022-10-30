@@ -1,27 +1,11 @@
 ---
-import type { MarkdownLayoutProps } from 'astro';
+import { MarkdownLayoutProps } from 'astro';
+import { Project } from '../components/ProjectCard';
 import '../global.css';
 
-export type Frontmatter = {
-  title?: string;
-  coauthors?: string[];
-  date?: string;
-  sumary?: string;
-  tags?: string[];
-  value?: number;
-  stack?: string[];
-  thumbnails?: string[];
-  hide?: boolean;
-  rank?: number;
-  repo?: string;
-};
-type Props = MarkdownLayoutProps<Frontmatter>;
-
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props as MarkdownLayoutProps<Project>;
 let date: null | Date = null;
-if (frontmatter.date) {
-  date = new Date(frontmatter.date);
-}
+date = new Date(frontmatter.date);
 ---
 
 <html data-theme='custom'>
