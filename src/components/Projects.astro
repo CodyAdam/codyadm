@@ -8,7 +8,7 @@ projects = projects.filter((p) => !p.frontmatter.hide);
 
 <div class='flex justify-center'>
   <div class=' container flex flex-col justify-center items-center'>
-    <!-- <ProjectFilter client:idle/> -->
+    <ProjectFilter client:idle/>
     <div class='flex gap-5 flex-wrap items-center justify-between'>
       {
         projects.map((project) => {

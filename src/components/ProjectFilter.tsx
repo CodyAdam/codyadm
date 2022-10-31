@@ -1,39 +1,46 @@
 import { useState } from 'react';
+import { BiStars } from './ico/BiStars';
 
-type GroupBy = 'year' | 'tags' | 'relevance';
+type Sort = 'time' | 'relevance';
 
 export default function ProjectFilter() {
-  const [groupBy, setGroupBy] = useState<GroupBy>('relevance');
+  const [sortBy, setSortBy] = useState<Sort>('relevance');
   return (
-    <div className='flex w-full gap-4 py-5'>
-      <SelectCard name='relevance' current={groupBy} set={(name) => setGroupBy(name)} header='Header' desc='Desc' />
-      <SelectCard name='year' current={groupBy} set={(name) => setGroupBy(name)} header='Header' desc='Desc' />
-      <SelectCard name='tags' current={groupBy} set={(name) => setGroupBy(name)} header='Header' desc='Desc' />
+    <div className='grid grid-cols-2 gap-4 py-5'>
+      <SelectCard
+        name='relevance'
+        current={sortBy}
+        set={(name) => setSortBy(name)}
+        header='Relevance'
+        desc='Each project are ranked by a revelance value based on project size, time spent and personnal value'
+        logo={<BiStars className='w-20 h-20' />}
+      />
+      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Time' desc='' />
     </div>
   );
 }
 
 function SelectCard(p: {
-  name: GroupBy;
-  current: GroupBy;
-  set: (name: GroupBy) => void;
+  name: Sort;
+  current: Sort;
+  set: (name: Sort) => void;
   header: string;
   desc: string;
+  logo?: JSX.Element;
 }) {
   return (
     <button
-      className={`grid h-32 flex-grow card bg-base-200 rounded-box place-items-center ${
-        p.current == p.name && 'ring-2 bg-blue-200'
+      className={`px-16 py-10 rounded-box gap-6 flex w-fit items-center ${
+        p.current == p.name ? 'ring-2 bg-blue-200' : 'hover:bg-base-200/50'
       }`}
-      onClick={() => {
-        console.log("set ",p.name);
-        
-        p.set(p.name);
-      }}
+      onClick={() => p.set(p.name)}
     >
-      {p.current == p.name && <h3>GROUP BY</h3>}
-      <h1>{p.header}</h1>
-      <p>{p.desc}</p>
+      {p.logo}
+
+      <div className='flex items-start justify-center gap-6 flex-col'>
+        <h1 className='font-semibold text-xl text-left'>{p.header}</h1>
+        <p className='font-medium text-base text-left opacity-50'>{p.desc}</p>
+      </div>
     </button>
   );
 }
