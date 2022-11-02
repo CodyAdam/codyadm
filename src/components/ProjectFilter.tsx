@@ -1,12 +1,13 @@
 import { SVGProps, useState } from 'react';
 import { BiStars } from './ico/BiStars';
+import MdiSortCalendarAscending from './ico/MdiSortCalendarAscending';
 
 type Sort = 'time' | 'relevance';
 
 export default function ProjectFilter() {
   const [sortBy, setSortBy] = useState<Sort>('relevance');
   return (
-    <div className='grid grid-cols-2 gap-10 p-5'>
+    <div className='grid grid-cols-2 gap-10 px-5 py-20'>
       <SelectCard
         name='relevance'
         current={sortBy}
@@ -15,7 +16,7 @@ export default function ProjectFilter() {
         desc='Each project has a relevance score from 1 to 4 which make bigger and more valuable project appear first'
         logo={BiStars}
       />
-      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Sort by time' desc={'Sort projects by it\'s starting date and group them by year'} logo={BiStars}/>
+      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Sort by time' desc={'Sort projects by it\'s starting date and group them by year'} logo={MdiSortCalendarAscending}/>
     </div>
   );
 }
