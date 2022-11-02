@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { SVGProps, useState } from 'react';
 import { BiStars } from './ico/BiStars';
 
 type Sort = 'time' | 'relevance';
@@ -6,16 +6,16 @@ type Sort = 'time' | 'relevance';
 export default function ProjectFilter() {
   const [sortBy, setSortBy] = useState<Sort>('relevance');
   return (
-    <div className='grid grid-cols-2 gap-4 py-5'>
+    <div className='grid grid-cols-2 gap-10 p-5'>
       <SelectCard
         name='relevance'
         current={sortBy}
         set={(name) => setSortBy(name)}
-        header='Relevance'
-        desc='Each project are ranked by a revelance value based on project size, time spent and personnal value'
-        logo={<BiStars className='w-20 h-20' />}
+        header='Sort by relevance'
+        desc='Each project has a relevance score from 1 to 4 which make bigger and more valuable project appear first'
+        logo={BiStars}
       />
-      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Time' desc='' />
+      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Sort by time' desc={'Sort projects by it\'s starting date and group them by year'} logo={BiStars}/>
     </div>
   );
 }
@@ -26,20 +26,19 @@ function SelectCard(p: {
   set: (name: Sort) => void;
   header: string;
   desc: string;
-  logo?: JSX.Element;
+  logo: (props: SVGProps<SVGSVGElement>) => JSX.Element;
 }) {
   return (
     <button
-      className={`px-16 py-10 rounded-box gap-6 flex w-fit items-center ${
-        p.current == p.name ? 'ring-2 bg-blue-200' : 'hover:bg-base-200/50'
+      className={`p-8 rounded-[2rem] gap-6 max-w-[38rem] flex items-center border border-transparent ${
+        p.current == p.name ? 'bg-neutral  border-base-300 shadow-lg' : 'hover:bg-base-200/50'
       }`}
       onClick={() => p.set(p.name)}
     >
-      {p.logo}
-
-      <div className='flex items-start justify-center gap-6 flex-col'>
-        <h1 className='font-semibold text-xl text-left'>{p.header}</h1>
-        <p className='font-medium text-base text-left opacity-50'>{p.desc}</p>
+      <p.logo className={`w-14 h-14 shrink-0 ${p.current == p.name ? "text-accent" : "text-neutral-focus"}`} />
+      <div className='flex items-start justify-center gap-5 flex-col'>
+        <h1 className='font-semibold text-2xl text-left text-primary'>{p.header}</h1>
+        <p className='font-medium text-neutral-content text-base text-left opacity-50 leading-6'>{p.desc}</p>
       </div>
     </button>
   );
