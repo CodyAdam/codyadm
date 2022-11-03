@@ -15,19 +15,23 @@ export type Project = {
   repo?: string;
 };
 
-
 type Props = MarkdownInstance<Project>;
 
 export default function ProjectCard({ project }: { project: Props }) {
   return (
     <div className=''>
-      <a href={project.url} className='card w-64 bg-base-100 hover:bg-base-200 transition-colors shadow-xl'>
+      <div className='card max-w-xl bg-neutral shadow-xl'>
+        <figure>
+          <img src='https://placeimg.com/400/225/arch' alt='Shoes' className='object-cover w-full'/>
+        </figure>
         <div className='card-body'>
-          <h2 className='card-title'>{project.frontmatter.title} </h2>
+          <h2 className='card-title'>{project.frontmatter.title}</h2>
           <p>{project.frontmatter.sumary}</p>
-          <div className='badge self-end'>{project.frontmatter.date}</div>
+          <div className='card-actions justify-end'>
+            <a href={project.url} className='btn btn-primary'>Learn more</a>
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }
