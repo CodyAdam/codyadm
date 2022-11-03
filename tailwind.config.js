@@ -21,9 +21,9 @@ module.exports = {
 				"accent-content": "#ffffff",
 				"success-content": "#ffffff",
 				"info-content": "#ffffff",
-				neutral : "#13171c",
-				"neutral-focus": "#292f36",
-				"neutral-content": "#47505c",
+				neutral : "#161b22",
+				"neutral-focus": "#333941",
+				"neutral-content": "#8b949e",
 				"base-100": "#0d1117",
 			}
 		}],
