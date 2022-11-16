@@ -6,7 +6,7 @@ let projects = await Astro.glob<Project>('../pages/projects/*.md');
 projects = projects.filter((p) => !p.frontmatter.hide);
 ---
 
-<div class='flex justify-center px-10 pt-10 md:pt-20' id='mywork'>
+<div class='flex justify-center px-10 pt-10 md:pt-20' id='projects'>
   <div class='container flex flex-col justify-center items-center'>
     <ProjectFilter client:idle />
     <div class='flex flex-col gap-5 md:gap-10 items-center justify-between'>

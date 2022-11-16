@@ -1,7 +1,31 @@
 <header
-  class='sticky top-0 font-display font-bold text-2xl flex items-baseline justify-center gap-10 md:gap-20 xl:gap-32 py-6 backdrop-blur-lg text-neutral-content z-50 mt-20'
+  class='sticky top-0 font-display font-bold text-2xl flex items-baseline justify-center gap-10 md:gap-20 xl:gap-32 py-6 backdrop-blur-lg text-neutral-content z-50 h-20'
 >
-  <a href='#mywork' class='font-black text-4xl text-primary'> my work</a>
-  <a href='#education'> education</a>
-  <a href='#contact'> contact</a>
+  <script>
+    const headersLabels = ['projects', 'education', 'contact'];
+    const headersLinks = headersLabels.map((label) => {
+      return document.getElementById(label + '-header');
+    });
+    const headersElements = headersLabels.map((label) => {
+      return document.getElementById(label);
+    });
+    window.addEventListener('scroll', (e) => {
+      // add class "sticky_header" to the headers elements when scrollY > element.offsetTop
+      const scrollY = window.scrollY;
+      let found = false;
+      for (let i = headersElements.length - 1; i >= 0; i--) {
+        const element = headersElements[i];
+        const header = headersLinks[i];
+        if (scrollY > element.offsetTop - 200 && !found) {
+          header.classList.add('sticky_header');
+          found = true;
+        } else {
+          header.classList.remove('sticky_header');
+        }
+      }
+    });
+  </script>
+  <a href='#projects' id='projects-header' class='transition-all'> projects</a>
+  <a href='#education' id='education-header' class='transition-all'> education</a>
+  <a href='#contact' id='contact-header' class='transition-all'> contact</a>
 </header>

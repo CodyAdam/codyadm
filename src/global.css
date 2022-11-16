@@ -57,3 +57,7 @@
   font-weight: 600;
   font-display: swap;
 }
+
+.sticky_header {
+  @apply font-black text-4xl text-primary;
+}
