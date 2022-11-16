@@ -1,25 +1,27 @@
 ---
-import ProjectCard, { Project, Size } from './ProjectCard';
+import ProjectCard, { Project, Size } from './ProjectCard.astro';
 import ProjectFilter from './ProjectFilter';
 
 let projects = await Astro.glob<Project>('../pages/projects/*.md');
 projects = projects.filter((p) => !p.frontmatter.hide);
 ---
 
-<div class='flex justify-center px-10 md:px-20 pt-10 md:pt-20' id='projects'>
+<div class='flex justify-center px-10 md:px-20 md:mx-20 pt-10 md:pt-20' id='projects'>
   <div class='container flex flex-col justify-center items-center'>
     <ProjectFilter client:idle />
     <div class='flex container flex-col w-full gap-10 md:gap-20 items-start justify-between pl-44 border-l-2'>
       {
-        projects.map((project, i) => {
-          const imod = i % 4;
-          let size: Size = 'sm';
-          if (imod === 1) size = 'md';
-          else if (imod === 2) size = 'lg';
-          else if (imod === 3) size = 'xl';
+        projects
+          .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+          .map((project, i) => {
+            const imod = i % 4;
+            let size: Size = 'sm';
+            if (imod === 1) size = 'md';
+            else if (imod === 2) size = 'lg';
+            else if (imod === 3) size = 'xl';
 
-          return <ProjectCard project={project} size={size} client:visible />;
-        })
+            return <ProjectCard project={project} size={size} />;
+          })
       }
     </div>
   </div>

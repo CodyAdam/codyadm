@@ -1,0 +1,46 @@
+---
+import { MarkdownInstance } from 'astro';
+import Drawer from './Drawer.astro';
+import { LazyProse } from './LazyProse';
+import LearnMore from './LearnMore.astro';
+import TimeDot from './TimeDot.astro';
+
+export type Project = {
+  title: string;
+  date: string;
+  sumary: string;
+  coauthors?: string[];
+  tags?: string[];
+  value?: number;
+  stack?: string[];
+  thumbnails?: string[];
+  hide?: boolean;
+  rank?: number;
+  repo?: string;
+};
+
+export type Size = 'sm' | 'md' | 'lg' | 'xl';
+interface Props {
+  project: MarkdownInstance<Project>;
+  size?: Size;
+}
+
+const { project, size } = Astro.props;
+---
+
+<div class='relative'>
+   <Drawer
+    className='group mx-3'
+    id={project.frontmatter.title}
+    title={project.frontmatter.title}
+  >
+    <div class='flex gap-4 leading-4 text-neutral-focus w-full flex-wrap overflow-hidden' slot="button">
+      <h1 class='inline shrink-1'>{project.frontmatter.title}</h1>
+      <LearnMore />
+    </div>
+    <div slot="content">
+      <LazyProse html={project.compiledContent()} client:visible/>
+    </div>
+  </Drawer>
+  <TimeDot date={project.frontmatter.date} size={size} /> 
+</div>
