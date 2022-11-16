@@ -5,18 +5,20 @@ export function Drawer({
   title,
   content,
   id,
+  className,
 }: {
   children: React.ReactNode;
   title?: String;
   content: React.ReactNode;
+  className?: string;
   id: string;
 }) {
   return (
     <div className='drawer drawer-end h-fit'>
       <input id={'drawer-' + id} type='checkbox' className='drawer-toggle' />
-      <div className='drawer-content ml-3'>
-        <label htmlFor={'drawer-' + id} className='drawer-button cursor-pointer'>
-          {children}
+      <div className='drawer-content'>
+        <label htmlFor={'drawer-' + id} className={'drawer-button cursor-pointer'}>
+          <div className={className}>{children}</div>
         </label>
       </div>
       <div className='drawer-side mr-4 fixed inset-0 z-40 pointer-events-none'>
