@@ -69,9 +69,4 @@
 .drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side {
   pointer-events: all;
 }
-.drawer.drawer-end > .drawer-toggle ~ .drawer-side .drawer-lazy-content {
-  display: none;
-}
-.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side .drawer-lazy-content {
-  display: block;
-}
+
