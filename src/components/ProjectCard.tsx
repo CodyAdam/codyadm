@@ -1,4 +1,5 @@
 import { MarkdownInstance } from 'astro';
+import { Drawer } from './Drawer';
 import ProjectFilter from './ProjectFilter';
 
 export type Project = {
@@ -17,15 +18,15 @@ export type Project = {
 
 type Props = MarkdownInstance<Project>;
 
-export default function ProjectCard({ project, size = 'md' }: { project: Props; size: 'sm' | 'md' | 'lg' | 'xl' }) {
+export default function ProjectCard({ project, size = 'md' }: { project: Props; size?: 'sm' | 'md' | 'lg' | 'xl' }) {
   switch (size) {
-    case "sm":
+    case 'sm':
       return <Sm project={project} />;
-    case "md":
+    case 'md':
       return <Md project={project} />;
-    case "lg":
+    case 'lg':
       return <Lg project={project} />;
-    case "xl":
+    case 'xl':
       return <Xl project={project} />;
     default:
       return (
@@ -51,14 +52,60 @@ export default function ProjectCard({ project, size = 'md' }: { project: Props; 
 }
 
 export function Sm({ project }: { project: Props }) {
-  return <div className=''>small</div>;
+  return (
+    <div className='flex gap-5 text-neutral-focus'>
+      <h1>{project.frontmatter.title}</h1>
+      <Drawer
+        content={<div className='prose' dangerouslySetInnerHTML={{ __html: project.compiledContent() }}></div>}
+        id={project.frontmatter.title}
+        title={project.frontmatter.title}
+      >
+        <a className='btn'>learn more</a>
+      </Drawer>
+    </div>
+  );
 }
+
 export function Md({ project }: { project: Props }) {
-  return <div className=''>medium</div>;
+  return (
+    <div className='flex gap-5'>
+      <h1>{project.frontmatter.title}</h1>
+      <Drawer
+        content={<div className='prose' dangerouslySetInnerHTML={{ __html: project.compiledContent() }}></div>}
+        id={project.frontmatter.title}
+        title={project.frontmatter.title}
+      >
+        <a className='btn'>learn more</a>
+      </Drawer>
+    </div>
+  );
 }
+
 export function Lg({ project }: { project: Props }) {
-  return <div className=''>large</div>;
+  return (
+    <div className='card bg-base-200 p-10 border'>
+      large{' '}
+      <Drawer
+        content={<div className='prose' dangerouslySetInnerHTML={{ __html: project.compiledContent() }}></div>}
+        id={project.frontmatter.title}
+        title={project.frontmatter.title}
+      >
+        <a className='btn'>learn more</a>
+      </Drawer>
+    </div>
+  );
 }
 export function Xl({ project }: { project: Props }) {
-  return <div className=''>xlarge</div>;
+  return (
+    <div className='card bg-base-200 p-10 border w-'>
+      xlarge{' '}
+      <Drawer
+        content={<div className='prose' dangerouslySetInnerHTML={{ __html: project.compiledContent() }}></div>}
+        id={project.frontmatter.title}
+        title={project.frontmatter.title}
+      >
+        <a className='btn'>learn more</a>
+      </Drawer>
+    </div>
+  );
 }

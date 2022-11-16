@@ -11,8 +11,14 @@ projects = projects.filter((p) => !p.frontmatter.hide);
     <ProjectFilter client:idle />
     <div class='flex container flex-col w-full gap-5 md:gap-10 items-start justify-between pl-44 border-l'>
       {
-        projects.map((project) => {
-          return <ProjectCard project={project} />;
+        projects.map((project, i) => {
+          const imod = i % 4;
+          let size: 'sm' | 'md' | 'lg' | 'xl' = 'sm';
+          if (imod === 1) size = 'md';
+          else if (imod === 2) size = 'lg';
+          else if (imod === 3) size = 'xl';
+
+          return <ProjectCard project={project} size={size} />;
         })
       }
     </div>

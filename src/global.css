@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: 'Gilroy';
   src: url('/fonts/Gilroy-Black.woff2') format('woff2');
@@ -16,7 +15,6 @@
   font-weight: bold;
   font-display: swap;
 }
-
 
 @font-face {
   font-family: 'Gilroy';
@@ -60,4 +58,14 @@
 
 .sticky_header {
   @apply font-black text-2xl sm:text-4xl text-primary;
+}
+
+.drawer.drawer-end > .drawer-toggle ~ .drawer-side > .drawer-overlay {
+  pointer-events: none;
+}
+
+.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay + *,
+.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay,
+.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side {
+  pointer-events: all;
 }
