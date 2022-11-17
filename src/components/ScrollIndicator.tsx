@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import SimpleLineIconsMouse from './ico/SimpleLineIconsMouse';
+import FluentMdl2DoubleChevronDown from './ico/FluentMdl2DoubleChevronDown';
 
 export function ScrollIndicator() {
   const [loaded, setLoaded] = useState(false);
@@ -22,7 +22,7 @@ export function ScrollIndicator() {
 
   return (
     <div className='absolute m-8 inset-0 flex flex-col items-center justify-end transition-all animate-pulse'>
-      <SimpleLineIconsMouse className='h-14 w-14 text-primary late-appear ' />
+      <FluentMdl2DoubleChevronDown className='h-8 w-8 text-primary late-appear ' />
     </div>
   );
 }
