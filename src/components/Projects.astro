@@ -1,4 +1,5 @@
 ---
+import EmojionePencil from './ico/EmojionePencil';
 import ProjectCard, { Project, Size } from './ProjectCard.astro';
 import ProjectFilter from './ProjectFilter';
 
@@ -9,20 +10,27 @@ projects = projects.filter((p) => !p.frontmatter.hide);
 <div class='flex justify-center px-10 md:px-20 md:mx-20 pt-10 md:pt-20' id='projects'>
   <div class='container flex flex-col justify-center items-center'>
     <ProjectFilter client:idle />
-    <div class='flex container flex-col w-full gap-10 md:gap-20 items-start justify-between pl-44 border-l-2'>
-      {
-        projects
-          .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
-          .map((project, i) => {
-            const imod = i % 4;
-            let size: Size = 'sm';
-            if (imod === 1) size = 'md';
-            else if (imod === 2) size = 'lg';
-            else if (imod === 3) size = 'xl';
+    <div class='flex pt-[14rem]'>
+      <div class="h-[105%] w-1 relative rounded-full bg-gradient-to-t from-purple-600/0 to-yellow-400 py-20 via-red-400/70 -translate-y-[2.5%]">
+        <div class="absolute top-0 left-[30%] -translate-y-[97%] ">
+          <EmojionePencil className="w-16 animate-drawing-rotation text-yellow-400 h-16"/>
+        </div>
+      </div>
+      <div class='flex grow container flex-col w-full gap-10 md:gap-20 items-start justify-between pl-[8rem]'>
+        {
+          projects
+            .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+            .map((project, i) => {
+              const imod = i % 4;
+              let size: Size = 'sm';
+              if (imod === 1) size = 'md';
+              else if (imod === 2) size = 'lg';
+              else if (imod === 3) size = 'xl';
 
-            return <ProjectCard project={project} size={size} />;
-          })
-      }
+              return <ProjectCard project={project} size={size} />;
+            })
+        }
+      </div>
     </div>
   </div>
 </div>

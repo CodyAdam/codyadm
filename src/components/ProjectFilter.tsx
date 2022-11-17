@@ -6,6 +6,7 @@ type Sort = 'time' | 'relevance';
 
 export default function ProjectFilter() {
   const [sortBy, setSortBy] = useState<Sort>('relevance');
+  return <div className='h-20 border w-full'></div>
   return (
     <div className='grid grid-rows-2 md:grid-cols-2 gap-5 md:gap-10 py-10 md:py-20'>
       <SelectCard
