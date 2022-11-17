@@ -70,3 +70,36 @@
   pointer-events: all;
 }
 
+.animate-drawing-rotation {
+  transform-origin: bottom left;
+  animation: drawing-rotation 6s ease-in-out forwards infinite;
+}
+
+@keyframes drawing-rotation {
+  0% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+.late-appear {
+  animation: late-appear 1s ease-in-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+@keyframes late-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
