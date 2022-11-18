@@ -73,7 +73,6 @@
 .animate-drawing-rotation {
   transform-origin: bottom left;
   animation: drawing-rotation 5s ease-in-out forwards infinite;
-  animation-delay: 2.5s;
 }
 
 @keyframes drawing-rotation {
