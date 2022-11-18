@@ -72,15 +72,24 @@
 
 .animate-drawing-rotation {
   transform-origin: bottom left;
-  animation: drawing-rotation 6s ease-in-out forwards infinite;
+  animation: drawing-rotation 5s ease-in-out forwards infinite;
+  animation-delay: 2.5s;
 }
 
 @keyframes drawing-rotation {
   0% {
     transform: rotate(-20deg);
   }
+  45%,
   50% {
     transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  70%,
+  80% {
+    transform: rotate(20deg);
   }
   100% {
     transform: rotate(-20deg);
