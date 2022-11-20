@@ -41,14 +41,13 @@ const maxHours = courses.reduce((max, course) => {
 export function Courses() {
   return (
     <div className='w-full max-w-6xl px-10 flex flex-col '>
-      <div className='w-full flex justify-center pb-5'>
+      <div className='w-full flex justify-center pb-12'>
         <div className='btn-group'>
-          <input type='radio' name='options' data-title='all courses' className='btn w-24' />
-          <input type='radio' name='options' data-title='2022' className='btn w-14' checked />
+          <input type='radio' name='options' data-title='all courses' className='btn w-24' checked />
+          <input type='radio' name='options' data-title='2022' className='btn w-14' />
           <input type='radio' name='options' data-title='2021' className='btn w-14' />
           <input type='radio' name='options' data-title='2020' className='btn w-14' />
           <input type='radio' name='options' data-title='2019' className='btn w-14' />
-          <input type='radio' name='options' data-title='2018' className='btn w-14' />
         </div>
       </div>
       {courses.map((course) => (
@@ -69,7 +68,7 @@ export function Courses() {
 }
 function Entry({ course }: { course: Course }) {
   return (
-    <div className='select-none flex gap-1 justify-center items-start sm:items-center flex-col sm:flex-row'>
+    <div className='select-none flex gap-1 justify-center items-start sm:items-center flex-col sm:flex-row appear'>
       <h1 className='w-52 text-xl font-semibold font-display text-left uppercase'>{course.category}</h1>
       <div className='flex items-center justify-between relative bg-black/30 grow w-full h-16 p-1 pr-3 rounded-lg  border border-gray-800'>
         <div className='h-full bg-gradient-to-tr from-red-600 to-yellow-300  rounded w-1/2 border border-white shadow-inner flex justify-center glow-shadow'></div>
