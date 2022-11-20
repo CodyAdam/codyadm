@@ -22,7 +22,7 @@ module.exports = {
 				"success-content": "#ffffff",
 				"info-content": "#ffffff",
 				neutral : "#161b22",
-				"neutral-focus": "#333941",
+				"neutral-focus": "#3c434d",
 				"neutral-content": "#8b949e",
 				"base-100": "#0d1117",
 			}
