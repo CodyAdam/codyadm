@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 type Course = {
   acronyme: string;
   title: string;
@@ -7,13 +9,19 @@ type Course = {
   category: string;
 };
 
+type Category = {
+  title: string;
+  hours: number;
+  courses: Course[];
+};
+
 const courses: Course[] = [
   {
     acronyme: 'MATH-101',
     title: 'Introduction to Computer Science',
     description: 'Introduction to Computer Science',
     hours: 43,
-    year: 1,
+    year: 2022,
     category: 'Mathematics',
   },
   {
@@ -21,7 +29,7 @@ const courses: Course[] = [
     title: 'Introduction to Computer Science',
     description: 'Introduction to Computer Science',
     hours: 34,
-    year: 2,
+    year: 2022,
     category: 'Mathematics',
   },
   {
@@ -29,36 +37,101 @@ const courses: Course[] = [
     title: ' Introduction to English',
     description: ' Introduction to English',
     hours: 20,
-    year: 1,
+    year: 2020,
     category: 'Language',
   },
 ];
 
-const maxHours = courses.reduce((max, course) => {
-  return course.hours > max ? course.hours : max;
-}, 0);
+function getCategories(filterYear?: number | null) {
+  const temp = [];
+  // foreach course, add it to the coresponding category
+  courses.forEach((course) => {
+    if (filterYear && course.year !== filterYear) return;
+    // find the category index
+    const categoryIndex = temp.findIndex((category) => category.title === course.category);
+    // if the category does not exist, create it
+    if (categoryIndex === -1) {
+      temp.push({
+        title: course.category,
+        hours: course.hours,
+        courses: [course],
+      });
+    } else {
+      // if the category exists, add the course to it
+      temp[categoryIndex].courses.push(course);
+      temp[categoryIndex].hours += course.hours;
+    }
+  });
+  return temp;
+}
 
 export function Courses() {
+  const [year, setYear] = useState<null | number>(null);
+  const [categories, setCategories] = useState<Category[]>(getCategories(year));
+  const [max, setMax] = useState(categories.reduce((acc, category) => acc + category.hours, 0));
+
+  useEffect(() => {
+    const cat = getCategories(year);
+    setCategories(cat);
+    setMax(cat.reduce((acc, category) => acc + category.hours, 0));
+  }, [year]);
+
+  const onYearChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const year = e.target.dataset.title;
+    setYear(year === 'all courses' ? null : parseInt(year));
+  };
+
   return (
     <div className='w-full max-w-6xl px-10 flex flex-col '>
       <div className='w-full flex justify-center pb-12'>
         <div className='btn-group'>
-          <input type='radio' name='options' data-title='all courses' className='btn w-24' checked />
-          <input type='radio' name='options' data-title='2022' className='btn w-14' />
-          <input type='radio' name='options' data-title='2021' className='btn w-14' />
-          <input type='radio' name='options' data-title='2020' className='btn w-14' />
-          <input type='radio' name='options' data-title='2019' className='btn w-14' />
+          <input
+            type='radio'
+            name='options'
+            data-title='all courses'
+            className='btn btn-sm w-24'
+            defaultChecked
+            onChange={onYearChange}
+          />
+          <input
+            type='radio'
+            name='options'
+            data-title='2022'
+            className='btn btn-sm w-14'
+            onChange={onYearChange}
+          />
+          <input
+            type='radio'
+            name='options'
+            data-title='2021'
+            className='btn btn-sm w-14'
+            onChange={onYearChange}
+          />
+          <input
+            type='radio'
+            name='options'
+            data-title='2020'
+            className='btn btn-sm w-14'
+            onChange={onYearChange}
+          />
+          <input
+            type='radio'
+            name='options'
+            data-title='2019'
+            className='btn btn-sm w-14'
+            onChange={onYearChange}
+          />
         </div>
       </div>
-      {courses.map((course) => (
-        <div tabIndex={0} key={course.acronyme} className='collapse collapse-arrow'>
+      {categories.map((category) => (
+        <div tabIndex={0} key={category.title} className='collapse collapse-arrow'>
           <input type='checkbox' className='peer' />
           <div className='collapse-title '>
-            <Entry course={course} />
+            <Entry category={category} max={max} />
           </div>
           <div className='collapse-content flex flex-col gap-3'>
-            {courses.map((course) => (
-              <SubEntry course={course} />
+            {category.courses.map((course) => (
+              <SubEntry key={course.acronyme} course={course} max={category.hours} />
             ))}
           </div>
         </div>
@@ -66,26 +139,32 @@ export function Courses() {
     </div>
   );
 }
-function Entry({ course }: { course: Course }) {
+function Entry({ category, max }: { category: Category; max: number }) {
   return (
     <div className='select-none flex gap-1 justify-center items-start sm:items-center flex-col sm:flex-row appear'>
-      <h1 className='w-52 text-xl font-semibold font-display text-left uppercase'>{course.category}</h1>
-      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-16 p-1 pr-3 rounded-lg  border border-gray-800'>
-        <div className='h-full bg-gradient-to-tr from-red-600 to-yellow-300  rounded w-1/2 border border-white shadow-inner flex justify-center glow-shadow'></div>
-        <div className='text-neutral-focus'>
-          <span className='font-semibold font-display text-xl text-primary'>{course.hours}</span> Hours
+      <h1 className='w-52 text-xl font-semibold font-display text-left uppercase'>{category.title}</h1>
+      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-16 p-1 pr-3 rounded-lg  border border-gray-800  gap-4'>
+        <div
+          className='h-full bg-gradient-to-tr from-red-600 to-yellow-300  rounded border border-white shadow-inner flex justify-center glow-shadow transition-all'
+          style={{ width: Math.round((category.hours / max) * 100) + '%' }}
+        ></div>
+        <div className='text-neutral-focus shrink-0'>
+          <span className='font-semibold font-display text-xl text-primary'>{category.hours}</span> Hours
         </div>
       </div>
     </div>
   );
 }
-function SubEntry({ course }: { course: Course }) {
+function SubEntry({ course, max }: { course: Course; max: number }) {
   return (
     <div className='select-none sm:pl-14 pl-8 pr-8 flex gap-1 justify-center items-start sm:items-center flex-col sm:flex-row'>
       <h1 className='w-40 text-sm font-medium text-left'>{course.title}</h1>
-      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-14 p-1 pr-3 rounded-lg  border border-gray-800'>
-        <div className='bg-gradient-to-tr from-slate-700 to-slate-400 h-full rounded w-1/2 border border-white/30 shadow-inner flex justify-center'></div>
-        <div className='text-neutral-focus'>
+      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-14 p-1 pr-3 rounded-lg  border border-gray-800 gap-4'>
+        <div
+          className='bg-gradient-to-tr from-slate-800 to-slate-500 h-full rounded border border-white/30 shadow-inner flex justify-center transition-all'
+          style={{ width: Math.round((course.hours / max) * 100) + '%' }}
+        ></div>
+        <div className='text-neutral-focus shrink-0'>
           <span className='font-semibold font-display text-md'>{course.hours}</span> Hours
         </div>
       </div>
