@@ -16,7 +16,7 @@ export function CircleGroupButton({
   }, [selected]);
 
   return (
-    <div className='w-full flex justify-center pb-12'>
+    <div className='w-full flex justify-center pb-4'>
       <div className='bg-neutral rounded-full p-1 flex sm:gap-3 gap-1'>
         {options.map((option) => (
           <button
