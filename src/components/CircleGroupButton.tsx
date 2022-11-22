@@ -20,6 +20,7 @@ export function CircleGroupButton({
       <div className='bg-neutral rounded-full p-1 flex sm:gap-3 gap-1'>
         {options.map((option) => (
           <button
+            key={option}
             className={`sm:px-3 py-1 px-2  active:scale-110 transition-all font-semibold uppercase text-xs rounded-full  ${
               selected == option ? ' bg-neutral-focus text-primary' : 'text-neutral-content'
             }`}
