@@ -6,7 +6,7 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		fontFamily: {
-			"display": ["Gilroy", ...defaultTheme.fontFamily.sans],
+			"display": ["Plus Jakarta Sans", ...defaultTheme.fontFamily.sans],
 			"mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extends: {
