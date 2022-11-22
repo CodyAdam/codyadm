@@ -1,6 +1,5 @@
 ---
 import { ScrollIndicator } from './ScrollIndicator';
-
 ---
 
 <div class='mb-[20vw] overflow-hidden max-w-full'>
@@ -31,9 +30,11 @@ import { ScrollIndicator } from './ScrollIndicator';
     </div>
   </div>
   <img
-  src='/sep.webp'
-  class='absolute pointer-events-none -translate-y-1/2 object-cover w-full select-none'
-  draggable='false'
+    alt='seperator gradient'
+    src={"/sepxx.webp"}
+    width={1000}
+    class='absolute pointer-events-none -translate-y-1/2 object-cover w-full select-none'
+    draggable='false'
   />
-  <ScrollIndicator client:idle/>
+  <ScrollIndicator client:idle />
 </div>

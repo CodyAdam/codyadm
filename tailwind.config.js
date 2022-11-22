@@ -7,7 +7,7 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			"display": ["Gilroy", ...defaultTheme.fontFamily.sans],
-			"mono": ["JetBrainsMono", ...defaultTheme.fontFamily.mono],
+			"mono": ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extends: {
 		}
