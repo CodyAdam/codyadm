@@ -21,8 +21,8 @@ export function ScrollIndicator() {
   }
 
   return (
-    <div className='absolute m-8 inset-0 flex flex-col items-center justify-end transition-all animate-pulse'>
-      <FluentMdl2DoubleChevronDown className='h-8 w-8 text-primary late-appear ' />
+    <div className='absolute pointer-events-none m-8 inset-0 flex flex-col items-center justify-end transition-all animate-pulse'>
+      <FluentMdl2DoubleChevronDown className='h-8 w-8 text-primary late-appear' />
     </div>
   );
 }
