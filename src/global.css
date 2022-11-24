@@ -4,96 +4,107 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.sticky_header {
-  @apply font-black text-2xl sm:text-4xl text-primary;
-}
-
-.drawer.drawer-end > .drawer-toggle ~ .drawer-side > .drawer-overlay {
-  pointer-events: none;
-}
-
-.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay + *,
-.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay,
-.drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side {
-  pointer-events: all;
-}
-
-.animate-drawing-rotation {
-  transform-origin: bottom left;
-  animation: drawing-rotation 5s ease-in-out forwards infinite;
-}
-
-@keyframes drawing-rotation {
-  0% {
-    transform: rotate(-20deg);
+@layer components {
+  .sticky_header {
+    @apply font-black text-2xl sm:text-4xl text-primary;
   }
-  45%,
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  70%,
-  80% {
-    transform: rotate(20deg);
-  }
-  100% {
-    transform: rotate(-20deg);
-  }
-}
 
-.late-appear {
-  animation: appear 2s ease-in-out forwards;
-  animation-delay: 2s;
-  opacity: 0;
-}
+  .drawer.drawer-end > .drawer-toggle ~ .drawer-side > .drawer-overlay {
+    pointer-events: none;
+  }
 
-@keyframes appear {
-  0% {
+  .drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay + *,
+  .drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side > .drawer-overlay,
+  .drawer.drawer-end > .drawer-toggle:checked ~ .drawer-side {
+    pointer-events: all;
+  }
+
+  .animate-drawing-rotation {
+    transform-origin: bottom left;
+    animation: drawing-rotation 5s ease-in-out forwards infinite;
+  }
+
+  @keyframes drawing-rotation {
+    0% {
+      transform: rotate(-20deg);
+    }
+    45%,
+    50% {
+      transform: rotate(10deg);
+    }
+    60% {
+      transform: rotate(0deg);
+    }
+    70%,
+    80% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }
+
+  .late-appear {
+    animation: appear 2s ease-in-out forwards;
+    animation-delay: 2s;
     opacity: 0;
-    transform: translateY(20px) scale(0.85);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.85);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
-}
-.mask-fade-b {
-  -webkit-mask-image: linear-gradient(to bottom, transparent 25%, black 75%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
-}
-.mask-fade-r {
-  -webkit-mask-image: linear-gradient(to right, transparent 25%, black 75%);
-  mask-image: linear-gradient(to right, transparent 0%, black 100%);
-}
-.appear {
-  animation: appear 1s ease-in-out forwards;
-  opacity: 0;
-}
 
-.glow-card {
-  box-shadow: 0px 11px 44px -20px rgba(255,255,0,0.05),0px 7px 81px -46px #9000ff48;
-  transition: box-shadow 0.3s ease-in-out;
-}
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 100%);
+  }
 
-.card-3d {
-  transition: transform .5s ease-in-out;
-  transform-style: preserve-3d;
-  transform: rotateX(0) rotateY(0);
-  
-}
-.card-3d:hover {
-  transition: transform .001s;
-  /* use the --xAngle and --yAngle to rotate */
-  transform: rotateX(var(--xAngle)) rotateY(var(--yAngle));
-}
+  .appear {
+    animation: appear 1s ease-in-out forwards;
+    opacity: 0;
+  }
 
-.glow-card:hover {
-  box-shadow: 0px 11px 44px -10px rgba(255,255,0,0.1),0px 7px 81px -46px #9000ff62;
-}
+  .glow-card {
+    box-shadow: 0px 11px 44px -20px rgba(255, 255, 0, 0.05), 0px 7px 81px -46px rgba(144, 0, 255, 0.28);
+    transition: box-shadow 0.3s ease-in-out;
+  }
 
-.glow-shadow {
-  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2), 0 0 10px 0 rgb(255, 255, 0, 0.2);
+  .glow-card:hover {
+    box-shadow: 0px 11px 44px -10px rgba(255, 255, 0, 0.1), 0px 7px 81px -46px rgba(144, 0, 255, 0.38);
+  }
+
+  .glow-card-accent {
+    box-shadow: 0px 15px 100px 7px rgba(255,255,0,0.1),0px 18px 48px 7px rgba(144, 0, 255, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .glow-card-accent:hover {
+    box-shadow: 0px 15px 100px 7px rgba(255,255,0,0.3),0px 18px 59px 8px rgba(144, 0, 255, 0.5);
+  }
+
+  .card-3d {
+    transition: transform 0.5s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateX(0) rotateY(0);
+  }
+  .card-3d:hover {
+    transition: transform 0.001s;
+    /* use the --xAngle and --yAngle to rotate */
+    transform: rotateX(var(--xAngle)) rotateY(var(--yAngle));
+  }
+
+  .glow-shadow {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2), 0 0 10px 0 rgb(255, 255, 0, 0.2);
+  }
 }

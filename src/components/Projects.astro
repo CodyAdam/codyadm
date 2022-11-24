@@ -16,7 +16,7 @@ projects = projects.filter((p) => !p.frontmatter.hide);
           <EmojionePencil className="w-16 animate-drawing-rotation text-yellow-400 h-16"/>
         </div>
       </div>
-      <div class='flex grow container flex-col w-full gap-20 md:gap-20 items-start justify-between pl-[8rem]'>
+      <div class='flex grow container flex-col w-full gap-20 md:gap-20 items-start justify-between pl-[8rem] max-w-6xl'>
         {
           projects
             .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())

@@ -10,9 +10,9 @@ type Props = {
 const { title, id, className } = Astro.props;
 ---
 
-<div class='drawer drawer-end h-fit'>
+<div class='drawer drawer-end overflow-visible h-fit'>
   <input id={'drawer-' + id} type='checkbox' class='drawer-toggle' />
-  <div class='drawer-content'>
+  <div class='drawer-content !overflow-visible'>
     <label for={'drawer-' + id} class={'drawer-button cursor-pointer'}>
       <div class={className}><slot /> <slot name='button' /></div>
     </label>

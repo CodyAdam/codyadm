@@ -4,6 +4,7 @@ import Drawer from './Drawer.astro';
 import { LazyProse } from './LazyProse';
 import LearnMore from './LearnMore.astro';
 import TimeDot from './TimeDot.astro';
+import { Wrapper3D } from './Wrapper3D';
 
 export type Project = {
   title: string;
@@ -28,19 +29,101 @@ interface Props {
 const { project, size } = Astro.props;
 ---
 
-<div class='relative'>
-   <Drawer
-    className='group mx-3'
-    id={project.frontmatter.title}
-    title={project.frontmatter.title}
-  >
-    <div class='flex gap-4 leading-4 text-neutral-focus w-full flex-wrap overflow-hidden' slot="button">
-      <h1 class='inline shrink-1'>{project.frontmatter.title}</h1>
-      <LearnMore />
-    </div>
-    <div slot="content">
-      <LazyProse html={project.compiledContent()} client:visible/>
+<div class='relative w-full'>
+  <Drawer className='group mx-3' id={project.frontmatter.title} title={project.frontmatter.title}>
+    {
+      size == 'sm' && (
+        <div class='flex gap-4 leading-4 text-neutral-focus w-full flex-wrap overflow-hidden' slot='button'>
+          <h1 class='inline shrink-1'>{project.frontmatter.title}</h1>
+          <LearnMore />
+        </div>
+      )
+    }
+    {
+      size == 'md' && (
+        <div
+          class='flex leading-4 text-primary w-fit card bg-base-100 border border-neutral-focus shadow-xl p-5 flex-wrap overflow-hidden text-left glow-card group'
+          slot='button'
+        >
+          <div class=' flex flex-col h-full items-start gap-10 z-10'>
+            <h1 class='inline shrink-1 font-display text-xl sm:text-2xl font-bold'>{project.frontmatter.title}</h1>
+            {project.frontmatter.tags && (
+              <div class='flex gap-2 flex-wrap justify-start -mt-7'>
+                {project.frontmatter.tags.map((tag) => (
+                  <span class='badge-sm badge'>{tag}</span>
+                ))}
+              </div>
+            )}
+            <LearnMore />
+          </div>
+        </div>
+      )
+    }
+    {
+      size == 'lg' && (
+        <div
+          class='flex leading-4 text-primary  min-h-[30rem] card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card group'
+          slot='button'
+        >
+          <div class=' flex flex-col lg:w-1/2 h-full lg:items-start items-center gap-10 z-10'>
+            <h1 class='inline shrink-1 font-display text-xl sm:text-3xl font-bold'>{project.frontmatter.title}</h1>
+            {project.frontmatter.tags && (
+              <div class='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
+                {project.frontmatter.tags.map((tag) => (
+                  <span class='badge-sm badge'>{tag}</span>
+                ))}
+              </div>
+            )}
+            <p class='opacity-60 text-sm '>{project.frontmatter.sumary}</p>
+
+            <div class='px-3 py-2 border-primary/5 transition-all lg:mt-auto group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
+              <LearnMore />
+            </div>
+          </div>
+          {project.frontmatter.thumbnails && (
+            <img
+              src={project.frontmatter.thumbnails[0]}
+              alt=''
+              class='absolute inset-0 opacity-80 h-2/3 mt-auto w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
+            />
+          )}
+        </div>
+      )
+    }
+    {
+      size == 'xl' && (
+        <div
+          class='flex leading-4 text-primary  min-h-[30rem] card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card-accent group'
+          slot='button'
+        >
+          <div class=' flex flex-col lg:w-1/2 h-full lg:items-start items-center gap-10 z-10'>
+            <h1 class='inline shrink-1 font-display text-xl sm:text-3xl font-bold'>{project.frontmatter.title}</h1>
+            {project.frontmatter.tags && (
+              <div class='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
+                {project.frontmatter.tags.map((tag) => (
+                  <span class='badge-sm badge'>{tag}</span>
+                ))}
+              </div>
+            )}
+            <p class='opacity-60 text-sm '>{project.frontmatter.sumary}</p>
+
+            <div class='px-3 py-2 border-primary/5 transition-all lg:mt-auto group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
+              <LearnMore />
+            </div>
+          </div>
+          {project.frontmatter.thumbnails && (
+            <img
+              src={project.frontmatter.thumbnails[0]}
+              alt=''
+              class='absolute inset-0 opacity-80 h-2/3 mt-auto w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
+            />
+          )}
+        </div>
+      )
+    }
+    <div slot='content'>
+      <LazyProse html={project.compiledContent()} client:visible />
     </div>
   </Drawer>
-  <TimeDot date={project.frontmatter.date} size={size} /> 
+  <TimeDot date={project.frontmatter.date} size={size} />
 </div>
