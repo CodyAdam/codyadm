@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { courses } from '../courses';
 import { CircleGroupButton } from './CircleGroupButton';
 
 export type Course = {
@@ -16,32 +17,6 @@ export type Category = {
   courses: Course[];
 };
 
-const courses: Course[] = [
-  {
-    acronyme: 'MATH-101',
-    title: 'Introduction to Computer Science',
-    description: 'Introduction to Computer Science',
-    hours: 43,
-    year: 2022,
-    category: 'Mathematics',
-  },
-  {
-    acronyme: 'MATH-102',
-    title: 'Introduction to Computer Science',
-    description: 'Introduction to Computer Science',
-    hours: 34,
-    year: 2022,
-    category: 'Mathematics',
-  },
-  {
-    acronyme: 'ANGL-101',
-    title: ' Introduction to English',
-    description: ' Introduction to English',
-    hours: 20,
-    year: 2020,
-    category: 'Language',
-  },
-];
 
 function getCategories(filterYear?: number | null) {
   const temp = [];
