@@ -548,7 +548,6 @@ function getCategorizedCoursesPerYear(whitelist: Semester[], allCourses: Course[
 }
 
 const all = [...s1, ...s2, ...s3, ...s4, ...s5, ...s6];
-console.log(s1);
 
 const year2019 = getCategorizedCoursesPerYear([Semester.s1, Semester.s2], all);
 const year2020 = getCategorizedCoursesPerYear([Semester.s3, Semester.s4], all);
