@@ -31,7 +31,7 @@ export function Projects({ projects }: { projects: MarkdownInstance<Project>[] }
           <div className='flex grow container flex-col w-full gap-20 md:gap-20 items-start justify-between pl-[3rem] sm:pl-[8rem] max-w-6xl'>
             {projects
               .filter((project) => project.frontmatter.value >= filter)
-              .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
+              .sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date))
               .map((project, i) => {
                 let size: Size = 'sm';
                 switch (project.frontmatter.value) {
