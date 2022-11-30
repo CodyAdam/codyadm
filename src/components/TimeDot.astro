@@ -67,15 +67,15 @@ const { date, size } = Astro.props;
 {
   size === 'xl' && (
     <>
-      <div class='absolute top-0 left-0 -translate-y-[.4rem] -translate-x-[3.2rem] sm:-translate-x-[8.2rem] w-32 flex items-center justify-start py-2'>
+      <div class='absolute top-0 left-0 -translate-y-[.4rem] -translate-x-[3.1rem] sm:-translate-x-[8.2rem] w-32 flex items-center justify-start py-2'>
         <div class='flex items-center justify-center h-4 relative'>
-          <div class='bg-base-100 h-16 w-16 -z-10 absolute rounded-full shrink-0' />
+          <div class='bg-base-100 h-16 w-2 -z-10 absolute shrink-0' />
           <div class='tooltip tooltip-secondary absolute z-30' data-tip='Big project'>
-            <div class='dot-xl' />
+            <div class='dot-xl rounded-tr-none rotate-45' />
           </div>
         </div>
       </div>
-      <span class='text-xs sm:text-sm font-mono text-neutral-content bg-base-100'>{date}</span>
+      <span class='text-xs sm:text-sm absolute -translate-y-7 translate-x-1 font-mono text-neutral-content bg-base-100'>{date}</span>
     </>
   )
 }

@@ -1,23 +1,50 @@
 import { SVGProps, useState } from 'react';
-import { BiStars } from './ico/BiStars';
-import MdiSortCalendarAscending from './ico/MdiSortCalendarAscending';
 
 type Sort = 'time' | 'relevance';
 
-export default function ProjectFilter() {
-  const [sortBy, setSortBy] = useState<Sort>('relevance');
-  return <div className='h-20 border w-full'></div>
+export default function ProjectFilter({ filter, setFilter }: { filter: number; setFilter: (filter: number) => void }) {
   return (
-    <div className='grid grid-rows-2 md:grid-cols-2 gap-5 md:gap-10 py-10 md:py-20'>
-      <SelectCard
-        name='relevance'
-        current={sortBy}
-        set={(name) => setSortBy(name)}
-        header='Sort by relevance'
-        desc='Each project has a relevance score from 1 to 4 which make bigger and more valuable project appear first'
-        logo={BiStars}
-      />
-      <SelectCard name='time' current={sortBy} set={(name) => setSortBy(name)} header='Sort by time' desc={'Sort projects by it\'s starting date and group them by year'} logo={MdiSortCalendarAscending}/>
+    <div className='w-full flex-col flex gap-10 items-center'>
+      {filter == 4 && (
+        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
+          Show <span className='font-bold text-4xl text-secondary px-1'>only the best</span> projects
+        </h1>
+      )}
+      {filter == 3 && (
+        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
+          Show <span className='font-bold text-4xl text-secondary px-1'>good</span> projects
+        </h1>
+      )}
+      {filter == 2 && (
+        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
+          Show <span className='font-bold text-4xl text-secondary px-1'>some</span> projects
+        </h1>
+      )}
+      {filter == 1 && (
+        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
+          Show <span className='font-bold text-4xl text-secondary px-1'>all</span> projects
+        </h1>
+      )}
+      <div className='max-w-3xl w-full'>
+        <input
+          type='range'
+          min='1'
+          max='4'
+          value={filter}
+          defaultValue={2}
+          className='range range-secondary w-full'
+          step='1'
+          onChange={(e) => {
+            setFilter(parseInt(e.target.value));
+          }}
+        />
+        <div className='w-full flex justify-between text-xs px-2 select-none '>
+          <span>|</span>
+          <span>|</span>
+          <span>|</span>
+          <span>|</span>
+        </div>
+      </div>
     </div>
   );
 }
@@ -37,10 +64,14 @@ function SelectCard(p: {
       }`}
       onClick={() => p.set(p.name)}
     >
-      <p.logo className={`w-11 h-11 md:w-14 md:h-14 shrink-0 ${p.current == p.name ? "text-accent" : "text-neutral-focus"}`} />
+      <p.logo
+        className={`w-11 h-11 md:w-14 md:h-14 shrink-0 ${p.current == p.name ? 'text-accent' : 'text-neutral-focus'}`}
+      />
       <div className='flex items-start justify-center gap-3 md:gap-5 flex-col'>
         <h1 className='font-semibold text-xl md:text-2xl text-left text-primary leading-6'>{p.header}</h1>
-        <p className='font-medium text-neutral-content text-base text-left opacity-50 leading-5 md:leading-6'>{p.desc}</p>
+        <p className='font-medium text-neutral-content text-base text-left opacity-50 leading-5 md:leading-6'>
+          {p.desc}
+        </p>
       </div>
     </button>
   );
