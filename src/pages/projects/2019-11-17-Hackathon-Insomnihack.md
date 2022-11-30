@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Hackathon Insomni'Hack 3.0 2019
+title: Participating in Hackathon Insomni'Hack 3.0 2019
 date: 2019/11/17
 sumary: A 24h hackathon hosted by Capgemini. The goal is to find a innovative solution to a problem.
 tags: 
@@ -11,7 +11,7 @@ tags:
 stack: 
   - c#
   - unity
-value: 4
+value: 1
 coauthors:
   - Leo-paul Huar 
   - Camille Molinier

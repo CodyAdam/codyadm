@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Hackathon Competitive AI
+title: Participating in Hackathon Competitive AI
 date: 2021/01
 sumary: A programming contest on the CodingGame platform in which the goal is to create the smartest AI using Python. The AI will have to play a game against other AIs in duels.
 tags: 
@@ -9,9 +9,10 @@ tags:
   - ai
 stack: 
   - python
-value: 4
+value: 3
 rank: 35/543
-thumbnails: ~
+thumbnails: 
+  - /md/ghost1.jpg
 ---
 
 

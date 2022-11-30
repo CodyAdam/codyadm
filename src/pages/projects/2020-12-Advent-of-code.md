@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Advent of code 2020
+title: Participating in Advent of code 2020
 date: 2020/12
 sumary: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 tags: 
@@ -8,7 +8,7 @@ tags:
   - problem solving
 stack:
   - python
-value: 4
+value: 1
 thumbnails: 
   - /md/aoc2020.png
 ---

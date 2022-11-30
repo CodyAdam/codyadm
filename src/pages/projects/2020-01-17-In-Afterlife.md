@@ -11,9 +11,9 @@ stack:
   - unity
   - c#
   - illustrator
-value: 5
+value: 3
 thumbnails: 
-  - https://img.itch.zone/aW1hZ2UvNTQ3MDc5LzUxNTc5MzIucG5n/347x500/GPcl10.png
+  - https://img.itch.zone/aW1hZ2UvNTQ3MDc5LzI4NTY3MDYucG5n/original/08shJ9.png
 ---
 
 # Play it on [itch.io](https://cowdee.itch.io/in-afterlife)

@@ -11,6 +11,6 @@ stack:
   - c++
   - make
   - sdl2
-value: 3
+value: 2
 thumbnails: ~
 ---

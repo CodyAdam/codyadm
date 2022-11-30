@@ -14,7 +14,7 @@ stack:
   - scala
   - swing
   - uml
-value: 4
+value: 1
 thumbnails: ~
 repo: https://github.com/CodyAdam/project__chatbot
 coauthors:

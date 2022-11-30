@@ -10,8 +10,9 @@ tags:
 stack:
   - java
   - stddraw
-value: 7
-thumbnails: ~
+value: 4
+thumbnails: 
+  - https://github.com/CodyAdam/game__tower-defence/blob/main/Thumb.png?raw=true
 coauthors: 
   - Fabien Goardou
 repo: https://github.com/CodyAdam/game__tower-defence

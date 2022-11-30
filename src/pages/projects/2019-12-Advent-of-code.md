@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Advent of code 2019
+title: Participating in Advent of code 2019
 date: 2019/12
 sumary: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 tags: 
@@ -8,7 +8,7 @@ tags:
   - problem solving
 stack:
   - python
-value: 2
+value: 1
 thumbnails: 
   - /md/aoc2019.png
 ---

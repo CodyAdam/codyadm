@@ -10,6 +10,6 @@ tags:
 stack: 
   - python
   - opencv
-value: 2
+value: 1
 thumbnails: ~
 ---

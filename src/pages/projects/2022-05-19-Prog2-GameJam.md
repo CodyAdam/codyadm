@@ -11,8 +11,9 @@ stack:
   - c++
   - sdl2
   - cmake
-value: 6
-thumbnails: ~
+value: 4
+thumbnails: 
+  - https://github.com/CodyAdam/Bounce-and-Slice/raw/master/gif.gif
 coauthors: 
   - Romain Briend
   - Fabien Goardou

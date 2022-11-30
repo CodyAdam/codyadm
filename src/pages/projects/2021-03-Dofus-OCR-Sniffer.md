@@ -12,7 +12,7 @@ stack:
   - tesseract
   - python
   - autohotkey
-value: 4
+value: 2
 thumbnails: ~
 repo: https://github.com/CodyAdam/tool__dofus-img-recogn
 ---

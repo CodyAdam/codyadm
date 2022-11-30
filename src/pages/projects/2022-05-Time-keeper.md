@@ -4,7 +4,7 @@ title: Time keeper
 date: 2022/05
 sumary: ~
 tags: ~
-value: ~
+value: 1
 thumbnails: ~
 hide: true
 ---

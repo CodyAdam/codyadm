@@ -2,6 +2,7 @@
 import { CopyToClipboard } from './CopyToClipboard';
 import IcBaselineDiscord from './ico/IcBaselineDiscord';
 import MdiGithub from './ico/MdiGithub';
+import MdiLinkedin from './ico/MdiLinkedin';
 import SimpleIconsArtstation from './ico/SimpleIconsArtstation';
 ---
 
@@ -9,7 +10,7 @@ import SimpleIconsArtstation from './ico/SimpleIconsArtstation';
 <div class='mt-[20vw] overflow-hidden max-w-full min-h-[80vh] bg-primary'>
   <img
     alt='seperator gradient'
-    src={"/sepxx.webp"}
+    src={'/sepxx.webp'}
     width={1000}
     class='absolute -translate-y-1/2 object-cover w-full rotate-180 select-none pointer-events-none'
     draggable='false'
@@ -32,6 +33,11 @@ import SimpleIconsArtstation from './ico/SimpleIconsArtstation';
         </a>
         <a href='https://www.artstation.com/CodyAdam' target='_blank' rel='noopener noreferrer' class='group'>
           <SimpleIconsArtstation
+            className='h-16 w-16 group-hover:animate-pulse group-hover:-translate-y-4 group-hover:scale-110 transition-all'
+          />
+        </a>
+        <a href='https://www.linkedin.com/in/codyadam/' target='_blank' rel='noopener noreferrer' class='group'>
+          <MdiLinkedin
             className='h-16 w-16 group-hover:animate-pulse group-hover:-translate-y-4 group-hover:scale-110 transition-all'
           />
         </a>

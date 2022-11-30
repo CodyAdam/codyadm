@@ -12,7 +12,7 @@ stack:
   - tailwindcss
   - js
   - nuxt.js
-value: 4
+value: 1
 thumbnails: ~
 coauthors:
   - Romain Briend

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Laval Virtual VR 2022
+title: Participating in Laval Virtual VR 2022
 date: 2022/04/12
 sumary: VR experience for the Laval Virtual Europe 2022 to solve a problem in the field of energy consumption.
 tags: 
@@ -8,7 +8,7 @@ tags:
   - hackathon
   - group project
   - vr
-value: 5
+value: 2
 thumbnails: ~
 coauthors:
   - Romain Briend

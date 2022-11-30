@@ -9,7 +9,7 @@ tags:
 stack: 
   - react
   - ts
-value: 3
+value: 1
 thumbnails: ~
 repo: https://github.com/CodyAdam/irkurk-lang
 ---

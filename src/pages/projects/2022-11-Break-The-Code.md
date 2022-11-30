@@ -9,11 +9,11 @@ tags:
   - group project
 stack: 
   - python
-value: 4
+value: 1
 rank: ~
 thumbnails: ~
 coauthors: 
   - Fabien Goardou
   - Benjamin De Zordo
-hide: true
+hide: false
 ---

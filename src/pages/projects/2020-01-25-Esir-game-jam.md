@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Histoire d'un fantôme - Esir game jam 2020
+title: Winner to Esir game jam 2020
 date: 2020/01/25
 sumary: A game made in 35 hours for the Esir game jam 2020. The theme was "Safe in the Dark".
 tags: 
@@ -11,9 +11,9 @@ tags:
 stack:
   - unreal engine
   - photoshop
-value: 4
+value: 3
 thumbnails: 
-  - /md/esir-jam3.png
+  - /md/esir-jam2.png
 coauthors:
   - Romain Briend
   - Léo-Paul Huar

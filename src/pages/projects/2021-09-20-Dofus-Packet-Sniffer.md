@@ -12,7 +12,7 @@ tags:
 stack:
   - python
   - pyshark
-value: 3
+value: 1
 thumbnails: ~
 repo: https://github.com/CodyAdam/Dofus-Packet-Sniffer
 ---
