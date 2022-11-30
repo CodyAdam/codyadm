@@ -78,9 +78,9 @@ function Entry({ category, max }: { category: Category; max: number }) {
   return (
     <div className='select-none flex gap-1 justify-center items-start sm:items-center flex-col sm:flex-row appear'>
       <h1 className='w-52 text-xl font-semibold font-display text-left uppercase'>{category.title}</h1>
-      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-16 p-1 pr-3 rounded-lg  border border-neutral-focus  gap-4'>
+      <div className='flex items-center justify-between relative bg-black/30 grow w-full h-16 p-1 pr-3 rounded-lg  border border-neutral-focus gap-4'>
         <div
-          className='h-full bg-gradient-to-tr from-red-600 to-yellow-300  rounded border border-white shadow-inner flex justify-center glow-shadow transition-all duration-300'
+          className='h-full bg-gradient-to-tr from-red-600 to-yellow-300  rounded border border-white flex justify-center glow-shadow transition-all duration-300'
           style={{ width: Math.round((category.hours / max) * 100) + '%' }}
         ></div>
         <div className='text-neutral-focus shrink-0'>
