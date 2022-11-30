@@ -1,53 +1,34 @@
 import { useEffect, useState } from 'react';
-import { courses } from '../courses';
+import { Category, Course, Semester, allCourses, year2019, year2020, year2021 } from '../courses';
 import { CircleGroupButton } from './CircleGroupButton';
 
-export type Course = {
-  acronyme: string;
-  title: string;
-  description?: string;
-  hours: number;
-  year: number;
-  category: string;
-};
-
-export type Category = {
-  title: string;
-  hours: number;
-  courses: Course[];
-};
-
-
-function getCategories(filterYear?: number | null) {
-  const temp = [];
-  // foreach course, add it to the coresponding category
-  courses.forEach((course) => {
-    if (filterYear && course.year !== filterYear) return;
-    // find the category index
-    const categoryIndex = temp.findIndex((category) => category.title === course.category);
-    // if the category does not exist, create it
-    if (categoryIndex === -1) {
-      temp.push({
-        title: course.category,
-        hours: course.hours,
-        courses: [course],
-      });
-    } else {
-      // if the category exists, add the course to it
-      temp[categoryIndex].courses.push(course);
-      temp[categoryIndex].hours += course.hours;
-    }
-  });
-  return temp;
+enum YearFilter {
+  all = 'all courses',
+  y2021 = '2021',
+  y2020 = '2020',
+  y2019 = '2019',
 }
 
 export function Courses() {
-  const [year, setYear] = useState<null | number>(null);
-  const [categories, setCategories] = useState<Category[]>(getCategories(year));
+  const [year, setYear] = useState<YearFilter>(YearFilter.all);
+  const [categories, setCategories] = useState<Category[]>(allCourses);
   const [max, setMax] = useState(categories.reduce((acc, category) => acc + category.hours, 0));
 
   useEffect(() => {
-    const cat = getCategories(year);
+    let cat = allCourses;
+    switch (year) {
+      case YearFilter.y2019:
+        cat = year2019;
+        break;
+      case YearFilter.y2020:
+        cat = year2020;
+        break;
+      case YearFilter.y2021:
+        cat = year2021;
+        break;
+      default:
+        cat = allCourses;
+    }
     setCategories(cat);
     setMax(cat.reduce((acc, category) => acc + category.hours, 0));
   }, [year]);
@@ -56,9 +37,25 @@ export function Courses() {
     <div className='w-full max-w-6xl px-5 flex flex-col '>
       <CircleGroupButton
         value={year === null ? 'all courses' : year.toString()}
-        options={['all courses', '2022', '2021', '2020', '2019']}
-        onChange={(value) => {
-          setYear(value === 'all courses' ? null : parseInt(value));
+        options={Object.values(YearFilter)}
+        onChange={(value : YearFilter) => {
+          let cat = allCourses;
+          switch (value) {
+            case YearFilter.y2019:
+              cat = year2019;
+              break;
+            case YearFilter.y2020:
+              cat = year2020;
+              break;
+            case YearFilter.y2021:
+              cat = year2021;
+              break;
+            default:
+              cat = allCourses;
+          }
+          
+          setCategories(cat);
+          setMax(cat.reduce((acc, category) => acc + category.hours, 0));
         }}
       />
       {categories.map((category) => (
@@ -69,7 +66,7 @@ export function Courses() {
           </div>
           <div className='collapse-content flex flex-col gap-3'>
             {category.courses.map((course) => (
-              <SubEntry key={course.acronyme} course={course} max={category.hours} />
+              <SubEntry key={course.acronyme + course.sem} course={course} max={category.hours} />
             ))}
           </div>
         </div>

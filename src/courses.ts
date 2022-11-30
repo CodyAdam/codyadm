@@ -1,20 +1,34 @@
-import { Course } from './components/Courses';
-
 enum h {
   sm = 24,
   md = 36,
   lg = 48,
 }
 
-enum s {
-  s1 = 2019,
-  s2 = 2020,
-  s3 = 2020,
-  s4 = 2021,
-  s5 = 2021,
-  s6 = 2022,
-  s7 = 2022,
-  s8 = 2023,
+export type Course = {
+  acronyme: string;
+  title: string;
+  englishTitle?: string;
+  hours: number;
+  sem: Semester;
+  category: string;
+  keywords?: string[];
+};
+
+export type Category = {
+  title: string;
+  hours: number;
+  courses: Course[];
+};
+
+export enum Semester {
+  s1 = 's1',
+  s2 = 's2',
+  s3 = 's3',
+  s4 = 's4',
+  s5 = 's5',
+  s6 = 's6',
+  s7 = 's7',
+  s8 = 's8',
 }
 
 // SEMESTRE 1
@@ -31,50 +45,50 @@ const s1: Course[] = [
   {
     acronyme: 'INF1',
     category: 'Development',
-    title: 'Informatique 1',
-    year: s.s1,
-    hours: h.md,
+    title: 'Computer Science',
+    sem: Semester.s1,
+    hours: h.lg,
   },
   {
     acronyme: 'DIE',
     category: 'Development',
-    title: 'Découverte Informatique Electronique',
-    year: s.s1,
-    hours: h.md,
+    title: 'Computer Science and Electronics Discovery',
+    sem: Semester.s1,
+    hours: h.lg,
   },
   {
     acronyme: 'FOM',
     category: 'Mathematics',
-    title: 'Fondamentaux Mathématiques',
-    year: s.s1,
+    title: 'Mathematics Fundamentals',
+    sem: Semester.s1,
     hours: h.md,
   },
   {
     acronyme: 'MAT1',
     category: 'Mathematics',
-    title: 'Mathématiques 1',
-    year: s.s1,
+    title: 'Mathematics',
+    sem: Semester.s1,
     hours: h.md,
   },
   {
     acronyme: 'COD',
-    category: 'Development',
-    title: 'Codage',
-    year: s.s1,
-    hours: h.md,
+    category: 'Systems',
+    title: 'Cryptology',
+    sem: Semester.s1,
+    hours: h.lg,
   },
   {
     acronyme: 'SI1',
     category: 'Development',
-    title: 'Spécialité Informatique 1',
-    year: s.s1,
+    title: 'Computer Science Speciality',
+    sem: Semester.s1,
     hours: h.md,
   },
   {
     acronyme: 'SE1',
     category: 'Electronics',
-    title: 'Spécialité Electronique 1',
-    year: s.s1,
+    title: 'Electronics Speciality',
+    sem: Semester.s1,
     hours: h.md,
   },
 ];
@@ -92,51 +106,51 @@ const s2: Course[] = [
   {
     acronyme: 'MAT2',
     category: 'Mathematics',
-    title: 'Mathématiques 2',
-    year: s.s2,
+    title: 'Mathematics',
+    sem: Semester.s2,
     hours: h.md,
   },
   {
     acronyme: 'ANG',
     category: 'Languages',
-    title: 'Anglais',
-    year: s.s2,
-    hours: h.md,
+    title: 'English',
+    sem: Semester.s2,
+    hours: h.sm,
   },
   {
     acronyme: 'PPC',
     category: 'Professional',
-    title: 'Projet Professionnel et Communication',
-    year: s.s2,
-    hours: h.md,
+    title: 'Professional Project and Communication',
+    sem: Semester.s2,
+    hours: h.sm,
   },
   {
     acronyme: 'SEN1',
     category: 'Electronics',
-    title: 'Spécialité Electronique Numérique 1',
-    year: s.s2,
-    hours: h.md,
+    title: 'Digital Electronics Speciality',
+    sem: Semester.s2,
+    hours: h.lg,
   },
   {
     acronyme: 'SI2',
     category: 'Development',
-    title: 'Spécialité Informatique 2',
-    year: s.s2,
-    hours: h.md,
+    title: 'Computer Science Speciality',
+    sem: Semester.s2,
+    hours: h.lg,
   },
   {
     acronyme: 'PH1',
     category: 'Physics',
-    title: 'Physique 1',
-    year: s.s2,
-    hours: h.md,
+    title: 'Physics',
+    sem: Semester.s2,
+    hours: h.lg,
   },
   {
     acronyme: 'CMA1',
     category: 'Mathematics',
-    title: 'Compléments ESIR de Mathématiques 1',
-    year: s.s2,
-    hours: h.md,
+    title: 'Mathematics Complements',
+    sem: Semester.s2,
+    hours: h.lg,
   },
 ];
 
@@ -153,51 +167,51 @@ const s3: Course[] = [
   {
     acronyme: 'MAT3',
     category: 'Mathematics',
-    title: 'Mathématiques 3',
-    year: s.s3,
-    hours: h.md,
+    title: 'Mathematics',
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'PO',
     category: 'Development',
-    title: 'Programmation objet',
-    year: s.s3,
-    hours: h.md,
+    title: 'Object Oriented Programming',
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'PRB',
     category: 'Mathematics',
-    title: 'Probabilités',
-    year: s.s3,
-    hours: h.md,
+    title: 'Probability',
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'OFI',
     category: 'Development',
-    title: "Outils formels pour l'informatique",
-    year: s.s3,
-    hours: h.md,
+    title: 'Formal Tools for Computer Science',
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'INS',
     category: 'Electronics',
     title: 'Instrumentation',
-    year: s.s3,
-    hours: h.md,
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'PH2',
     category: 'Physics',
-    title: 'Physique 2',
-    year: s.s3,
-    hours: h.md,
+    title: 'Physics',
+    sem: Semester.s3,
+    hours: h.lg,
   },
   {
     acronyme: 'EXP',
     category: 'Professional',
-    title: 'Expression et communication',
-    year: s.s3,
-    hours: h.md,
+    title: 'Expression and Communication',
+    sem: Semester.s3,
+    hours: h.sm,
   },
 ];
 
@@ -217,72 +231,72 @@ const s4: Course[] = [
   {
     acronyme: 'STA',
     category: 'Mathematics',
-    title: 'Statistiques',
-    year: s.s4,
+    title: 'Statistics',
+    sem: Semester.s4,
     hours: h.md,
   },
   {
     acronyme: 'ARI',
     category: 'Mathematics',
-    title: 'Arithmétique',
-    year: s.s4,
-    hours: h.md,
+    title: 'Arithmetic',
+    sem: Semester.s4,
+    hours: h.lg,
   },
   {
     acronyme: 'GEN',
     category: 'Development',
-    title: 'Génie logiciel',
-    year: s.s4,
-    hours: h.md,
+    title: 'Software Engineering',
+    sem: Semester.s4,
+    hours: h.lg,
   },
   {
     acronyme: 'MAT4',
     category: 'Mathematics',
-    title: 'Mathématiques 4',
-    year: s.s4,
+    title: 'Mathematics',
+    sem: Semester.s4,
     hours: h.md,
   },
   {
     acronyme: 'CMA2',
     category: 'Mathematics',
-    title: 'Compléments de mathématiques 2',
-    year: s.s4,
-    hours: h.md,
+    title: 'Mathematics Complements',
+    sem: Semester.s4,
+    hours: h.lg,
   },
   {
     acronyme: 'SIG',
     category: 'Electronics',
-    title: 'Initiation au signal',
-    year: s.s4,
-    hours: h.md,
+    title: 'Basic Signal Processing',
+    sem: Semester.s4,
+    hours: h.lg,
   },
   {
     acronyme: 'TEL',
     category: 'Electronics',
-    title: 'Télécom',
-    year: s.s4,
-    hours: h.md,
+    title: 'Telecommunications',
+    sem: Semester.s4,
+    hours: h.lg,
   },
   {
     acronyme: 'CST',
     category: 'Professional',
-    title: 'Communication scientifique et technique',
-    year: s.s4,
-    hours: h.md,
+    title: 'Scientific and Technical Communication',
+    sem: Semester.s4,
+    hours: h.sm,
   },
   {
     acronyme: 'ANG',
     category: 'Languages',
-    title: 'Anglais',
-    year: s.s4,
-    hours: h.md,
+    title: 'English',
+    sem: Semester.s4,
+    hours: h.sm,
   },
   {
     acronyme: 'TIPE',
     category: 'Professional',
-    title: 'TIPE',
-    year: s.s4,
-    hours: h.md,
+    title: 'Personal ending project',
+    sem: Semester.s4,
+    hours: h.lg,
   },
 ];
 
@@ -304,86 +318,86 @@ const s5: Course[] = [
   {
     acronyme: 'MATHS1',
     category: 'Mathematics',
-    title: 'Mathématiques',
-    year: s.s5,
-    hours: h.md,
+    title: 'Mathematics',
+    sem: Semester.s5,
+    hours: h.lg,
   },
   {
     acronyme: 'PROB',
     category: 'Mathematics',
-    title: 'Probabilités',
-    year: s.s5,
+    title: 'Probability',
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'STAT',
     category: 'Mathematics',
-    title: 'Statistiques',
-    year: s.s5,
+    title: 'Statistics',
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'PROG1',
     category: 'Development',
-    title: 'Programmation',
-    year: s.s5,
-    hours: h.md,
+    title: 'Programming',
+    sem: Semester.s5,
+    hours: h.lg,
   },
   {
     acronyme: 'ELEC',
     category: 'Electronics',
-    title: 'Interaction électronique / logiciel',
-    year: s.s5,
-    hours: h.md,
+    title: 'Electronics / Software Interaction',
+    sem: Semester.s5,
+    hours: h.lg,
   },
   {
     acronyme: 'RES',
     category: 'Systems',
-    title: 'Réseaux',
-    year: s.s5,
+    title: 'Networks',
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'SYS',
     category: 'Systems',
-    title: "Systèmes d'exploitation",
-    year: s.s5,
+    title: 'Operating Systems',
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'MGT',
     category: 'Professional',
     title: 'Management',
-    year: s.s5,
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'INENT',
     category: 'Professional',
-    title: 'Innovation et entrepreneuriat',
-    year: s.s5,
+    title: 'Innovation and Entrepreneurship',
+    sem: Semester.s5,
     hours: h.md,
   },
   {
     acronyme: 'ANG',
     category: 'Languages',
-    title: 'Anglais',
-    year: s.s5,
-    hours: h.md,
+    title: 'English',
+    sem: Semester.s5,
+    hours: h.sm,
   },
   {
     acronyme: 'COM',
     category: 'Professional',
     title: 'Communication',
-    year: s.s5,
-    hours: h.md,
+    sem: Semester.s5,
+    hours: h.sm,
   },
   {
     acronyme: 'SPO',
     category: 'Sport',
     title: 'Bouldering',
-    year: s.s5,
-    hours: h.md,
+    sem: Semester.s5,
+    hours: h.sm,
   },
 ];
 
@@ -407,94 +421,139 @@ const s6: Course[] = [
   {
     acronyme: 'MATHS2',
     category: 'Mathematics',
-    title: 'Mathématiques',
-    year: s.s6,
+    title: 'Mathematics',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'TS',
     category: 'Mathematics',
-    title: 'Traitement du signal',
-    year: s.s6,
+    title: 'Signal Processing',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'PROJ_MATH',
     category: 'Mathematics',
-    title: 'Projet Mathématiques',
-    year: s.s6,
+    title: 'Mathematics Project',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'PROG2',
     category: 'Development',
-    title: 'Programmation',
-    year: s.s6,
+    title: 'Programming',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'BD',
     category: 'Development',
-    title: 'Bases de données',
-    year: s.s6,
+    title: 'Databases',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'AG',
     category: 'Development',
-    title: 'Algorithme des Graphes',
-    year: s.s6,
+    title: 'Graph Algorithms',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'IIA',
     category: 'Development',
-    title: 'Introduction Intelligence Artificielle',
-    year: s.s6,
+    title: 'Introduction to Artificial Intelligence',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'PROJ_PROG',
     category: 'Development',
-    title: 'Projet Programmation',
-    year: s.s6,
+    title: 'Programming Project',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'MGT',
     category: 'Professional',
     title: 'Management',
-    year: s.s6,
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'INENT',
     category: 'Professional',
-    title: 'Innovation et entrepreneuriat',
-    year: s.s6,
+    title: 'Innovation and Entrepreneurship',
+    sem: Semester.s6,
     hours: h.md,
   },
   {
     acronyme: 'ANG',
     category: 'Languages',
-    title: 'Anglais',
-    year: s.s6,
-    hours: h.md,
+    title: 'English',
+    sem: Semester.s6,
+    hours: h.sm,
   },
   {
     acronyme: 'COM',
     category: 'Professional',
     title: 'Communication',
-    year: s.s6,
-    hours: h.md,
+    sem: Semester.s6,
+    hours: h.sm,
   },
   {
     acronyme: 'SPO',
     category: 'Sport',
     title: 'Bouldering',
-    year: s.s6,
-    hours: h.md,
+    sem: Semester.s6,
+    hours: h.sm,
   },
 ];
 
-export const courses = [...s1, ...s2, ...s3, ...s4, ...s5, ...s6];
+function getCategorizedCourses(courses: Course[]) {
+  const categorizedCourses: Category[] = [];
+  courses.forEach((course) => {
+    // find the category index
+    const categoryIndex = categorizedCourses.findIndex((category) => category.title === course.category);
+
+    // if the category does not exist, create it
+    if (categoryIndex === -1) {
+      categorizedCourses.push({
+        title: course.category,
+        hours: course.hours,
+        courses: [{...course}],
+      });
+    } else {
+      // if the category exists
+      // check if the course is already in the category
+      const courseIndex = categorizedCourses[categoryIndex].courses.findIndex((c) => c.title === course.title);
+      if (courseIndex === -1) {
+        // add the course to it
+        categorizedCourses[categoryIndex].courses.push({...course});
+      } else {
+        // add the hours count to the course
+        categorizedCourses[categoryIndex].courses[courseIndex].hours += course.hours;
+      }
+      categorizedCourses[categoryIndex].hours += course.hours;
+    }
+  });
+  categorizedCourses.sort((a, b) => b.hours - a.hours);
+  return categorizedCourses;
+}
+
+function getCategorizedCoursesPerYear(whitelist: Semester[], allCourses: Course[]) {
+  const courses = allCourses.filter((course) => whitelist.includes(course.sem));
+  return getCategorizedCourses(courses);
+}
+
+const all = [...s1, ...s2, ...s3, ...s4, ...s5, ...s6];
+console.log(s1);
+
+const year2019 = getCategorizedCoursesPerYear([Semester.s1, Semester.s2], all);
+const year2020 = getCategorizedCoursesPerYear([Semester.s3, Semester.s4], all);
+const year2021 = getCategorizedCoursesPerYear([Semester.s5, Semester.s6], all);
+
+const allCourses = getCategorizedCourses(all);
+
+export { allCourses, year2019, year2020, year2021 };
