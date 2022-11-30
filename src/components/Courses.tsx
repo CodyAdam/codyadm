@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { CircleGroupButton } from './CircleGroupButton';
 
-type Course = {
+export type Course = {
   acronyme: string;
   title: string;
-  description: string;
+  description?: string;
   hours: number;
   year: number;
   category: string;
 };
 
-type Category = {
+export type Category = {
   title: string;
   hours: number;
   courses: Course[];
