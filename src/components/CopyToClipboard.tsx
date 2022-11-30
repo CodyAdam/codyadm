@@ -6,8 +6,6 @@ export function CopyToClipboard(props: SVGProps<SVGSVGElement> & { text: string 
   const [copied, setCopied] = useState(false);
   const [copiedTimeout, setCopiedTimeout] = useState(null);
   const handleClick = () => {
-    console.log('CopyToClipboard.handleClick');
-
     navigator.clipboard.writeText(props.text);
     setCopied(true);
     setCopiedTimeout(setTimeout(() => setCopied(false), 2000));
