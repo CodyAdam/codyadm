@@ -31,7 +31,6 @@ export default function ProjectFilter({ filter, setFilter }: { filter: number; s
           min='1'
           max='4'
           value={filter}
-          defaultValue={2}
           className='range range-secondary w-full'
           step='1'
           onChange={(e) => {
