@@ -13,7 +13,7 @@ stack:
   - cmake
 value: 4
 thumbnails: 
-  - https://github.com/CodyAdam/Bounce-and-Slice/raw/master/gif.gif
+  - /md/bounce-slide.png
 coauthors: 
   - Romain Briend
   - Fabien Goardou

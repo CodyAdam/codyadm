@@ -12,7 +12,7 @@ stack:
   - stddraw
 value: 4
 thumbnails: 
-  - https://github.com/CodyAdam/game__tower-defence/blob/main/Thumb.png?raw=true
+  - /md/bloons.webp
 coauthors: 
   - Fabien Goardou
 repo: https://github.com/CodyAdam/game__tower-defence
