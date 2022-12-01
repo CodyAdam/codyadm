@@ -152,6 +152,13 @@ const s2: Course[] = [
     sem: Semester.s2,
     hours: h.lg,
   },
+  {
+    acronyme: 'BOUL',
+    category: 'Sport',
+    title: 'Bouldering',
+    sem: Semester.s2,
+    hours: h.md,
+  },
 ];
 
 // SEMESTRE 3
@@ -212,6 +219,13 @@ const s3: Course[] = [
     title: 'Expression and Communication',
     sem: Semester.s3,
     hours: h.sm,
+  },
+  {
+    acronyme: 'BOUL',
+    category: 'Sport',
+    title: 'Bouldering',
+    sem: Semester.s3,
+    hours: h.md,
   },
 ];
 
@@ -297,6 +311,13 @@ const s4: Course[] = [
     title: 'Personal ending project',
     sem: Semester.s4,
     hours: h.lg,
+  },
+  {
+    acronyme: 'BOUL',
+    category: 'Sport',
+    title: 'Bouldering',
+    sem: Semester.s4,
+    hours: h.md,
   },
 ];
 
@@ -393,11 +414,11 @@ const s5: Course[] = [
     hours: h.sm,
   },
   {
-    acronyme: 'SPO',
+    acronyme: 'BOUL',
     category: 'Sport',
     title: 'Bouldering',
     sem: Semester.s5,
-    hours: h.sm,
+    hours: h.md,
   },
 ];
 
@@ -427,7 +448,7 @@ const s6: Course[] = [
   },
   {
     acronyme: 'TS',
-    category: 'Mathematics',
+    category: 'Electronics',
     title: 'Signal Processing',
     sem: Semester.s6,
     hours: h.md,
@@ -482,11 +503,18 @@ const s6: Course[] = [
     hours: h.md,
   },
   {
+    acronyme: 'MARKETING',
+    category: 'Professional',
+    title: 'Marketing',
+    sem: Semester.s6,
+    hours: h.md,
+  },
+  {
     acronyme: 'INENT',
     category: 'Professional',
     title: 'Innovation and Entrepreneurship',
     sem: Semester.s6,
-    hours: h.md,
+    hours: h.lg,
   },
   {
     acronyme: 'ANG',
@@ -503,9 +531,23 @@ const s6: Course[] = [
     hours: h.sm,
   },
   {
-    acronyme: 'SPO',
+    acronyme: 'BOUL',
     category: 'Sport',
     title: 'Bouldering',
+    sem: Semester.s6,
+    hours: h.sm,
+  },
+  {
+    acronyme: 'VOLLEY',
+    category: 'Sport',
+    title: 'Volleyball',
+    sem: Semester.s6,
+    hours: h.sm,
+  },
+  {
+    acronyme: 'ULTIMATE',
+    category: 'Sport',
+    title: 'Ultimate Frisbee',
     sem: Semester.s6,
     hours: h.sm,
   },
