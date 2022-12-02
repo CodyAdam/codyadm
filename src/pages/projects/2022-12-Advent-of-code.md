@@ -1,13 +1,14 @@
 ---
 layout: ../../layouts/ProjectLayout.astro
-title: Participating in Advent of code 2021
-date: 2021/12
+title: Participating in Advent of code 2022
+date: 2022/12
 sumary: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like.
 tags: 
   - challenge
   - problem solving
 stack:
   - python
+  - rust
 value: 1
 thumbnails: 
   - /md/aoc2021.png
@@ -23,10 +24,4 @@ You don't need a computer science background to participate - just a little prog
 
 # My experience
 
-[My solutions](https://github.com/CodyAdam/puzzle__advent-of-code-2019)
-
-There is 25 level with 2 points to gain on each
-
-I did 14/50 points this year
-
-![](/md/aoc2019.png)
+[My solutions](https://github.com/CodyAdam/aoc-2022)
