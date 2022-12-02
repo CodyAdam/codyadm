@@ -6,6 +6,7 @@ import { Projects } from './Projects';
 
 let projects = await Astro.glob<Project>('../pages/projects/*.md');
 projects = projects.filter((p) => !p.frontmatter.hide);
+
 ---
 
 <div id="projects">

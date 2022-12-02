@@ -9,19 +9,20 @@ coauthors:
 tags: 
   - parsing
   - documentation
+  - group project
 value: 3
 stack: 
   - typescript
   - yml
 thumbnails: 
   - /md/gitlab-to-md.png
-repo: [string OPTIONAL](https://github.com/Pixselve/gitlab-pipeline-to-md/)
+repo: https://github.com/Pixselve/gitlab-pipeline-to-md/
 ---
 
 
 # ⚙️ Gitlab CI documentation generator
 
-![]
+![thumbnail](/md/gitlab-to-md.png)
 
 ![Nuit de l'info 2022](https://img.shields.io/badge/Nuit%20de%20l'info-2022-green)
 
