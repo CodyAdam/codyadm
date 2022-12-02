@@ -21,14 +21,14 @@ export type Category = {
 };
 
 export enum Semester {
-  s1 = 's1',
-  s2 = 's2',
-  s3 = 's3',
-  s4 = 's4',
-  s5 = 's5',
-  s6 = 's6',
-  s7 = 's7',
-  s8 = 's8',
+  s1 = 's1', // 2019
+  s2 = 's2', // 2020
+  s3 = 's3', // 2020
+  s4 = 's4', // 2021
+  s5 = 's5', // 2021
+  s6 = 's6', // 2022
+  s7 = 's7', // 2022
+  s8 = 's8', // 2023
 }
 
 // SEMESTRE 1
@@ -115,7 +115,7 @@ const s2: Course[] = [
     category: 'Languages',
     title: 'English',
     sem: Semester.s2,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'PPC',
@@ -169,6 +169,7 @@ const s2: Course[] = [
 // INS - Instrumentation Anne-Claude Tarot CC écrit oral QCM TP 6 6 S = CC
 // PH2 - Physique 2 Olivier Émile CC écrit oral QCM TP 3 3 S = CC
 // EXP - Expression et communication D. Mahieu CC Oral S = CC
+// ANG - Anglais Laurence Morlet CC Ecrit, oral 3 3 S = CC
 
 const s3: Course[] = [
   {
@@ -176,7 +177,7 @@ const s3: Course[] = [
     category: 'Mathematics',
     title: 'Mathematics',
     sem: Semester.s3,
-    hours: h.lg,
+    hours: h.sm,
   },
   {
     acronyme: 'PO',
@@ -227,6 +228,13 @@ const s3: Course[] = [
     sem: Semester.s3,
     hours: h.md,
   },
+  {
+    acronyme: 'ANG',
+    category: 'Languages',
+    title: 'English',
+    sem: Semester.s3,
+    hours: h.md,
+  }
 ];
 
 // SEMESTRE 4
@@ -296,14 +304,14 @@ const s4: Course[] = [
     category: 'Professional',
     title: 'Scientific and Technical Communication',
     sem: Semester.s4,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'ANG',
     category: 'Languages',
     title: 'English',
     sem: Semester.s4,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'TIPE',
@@ -404,14 +412,14 @@ const s5: Course[] = [
     category: 'Languages',
     title: 'English',
     sem: Semester.s5,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'COM',
     category: 'Professional',
     title: 'Communication',
     sem: Semester.s5,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'BOUL',
@@ -521,21 +529,21 @@ const s6: Course[] = [
     category: 'Languages',
     title: 'English',
     sem: Semester.s6,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'COM',
     category: 'Professional',
     title: 'Communication',
     sem: Semester.s6,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'BOUL',
     category: 'Sport',
     title: 'Bouldering',
     sem: Semester.s6,
-    hours: h.sm,
+    hours: h.md,
   },
   {
     acronyme: 'VOLLEY',
