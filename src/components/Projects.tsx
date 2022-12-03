@@ -1,10 +1,10 @@
 import { MarkdownInstance } from 'astro';
 import { useEffect, useState } from 'react';
 import EmojionePencil from './ico/EmojionePencil';
-import { ProjectCard, Project, Size } from './ProjectCard';
+import { ProjectCard, Project, Size, WithContent } from './ProjectCard';
 import ProjectFilter from './ProjectFilter';
 
-export function Projects({ projects }: { projects: MarkdownInstance<Project>[] }) {
+export function Projects({ projects }: { projects: WithContent<MarkdownInstance<Project>>[] }) {
   const [loaded, setLoaded] = useState(false);
   const [filter, setFilter] = useState<number>(2);
 
@@ -31,7 +31,6 @@ export function Projects({ projects }: { projects: MarkdownInstance<Project>[] }
           <div className='flex grow container flex-col w-full gap-20 md:gap-20 items-start justify-between pl-[3rem] sm:pl-[8rem] max-w-6xl'>
             {projects
               .filter((project) => project.frontmatter.value >= filter)
-              .sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date))
               .map((project, i) => {
                 let size: Size = 'sm';
                 switch (project.frontmatter.value) {

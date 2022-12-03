@@ -3,6 +3,8 @@ import { Drawer } from './Drawer';
 import { LazyProse } from './LazyProse';
 import { TimeDot } from './TimeDot';
 
+export type WithContent<T> = T & { content: string };
+
 export type Project = {
   title: string;
   date: string;
@@ -19,7 +21,7 @@ export type Project = {
 
 export type Size = 'sm' | 'md' | 'lg' | 'xl';
 interface Props {
-  project: MarkdownInstance<Project>;
+  project: WithContent<MarkdownInstance<Project>>;
   size?: Size;
 }
 
@@ -33,8 +35,7 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
         title={project.frontmatter.title}
         content={
           <div slot='content'>
-            {/* <LazyProse html={project.compiledContent()} /> */}
-            <LazyProse html={""} />
+            <LazyProse html={project.content} />
           </div>
         }
       >

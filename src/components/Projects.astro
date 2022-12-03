@@ -1,14 +1,22 @@
 ---
+import { MarkdownInstance } from 'astro';
 import EmojionePencil from './ico/EmojionePencil';
+import { WithContent } from './ProjectCard';
 import ProjectCard, { Project, Size } from './ProjectCard.astro';
 import ProjectFilter from './ProjectFilter';
 import { Projects } from './Projects';
 
 let projects = await Astro.glob<Project>('../pages/projects/*.md');
 projects = projects.filter((p) => !p.frontmatter.hide);
-
+projects = projects.sort((a, b) => b.frontmatter.date.localeCompare(a.frontmatter.date));
+const withContent: WithContent<MarkdownInstance<Project>>[] = projects.map((p) => {
+  return {
+    ...p,
+    content: p.compiledContent(),
+  };
+});
 ---
 
-<div id="projects">
-  <Projects projects={projects} client:idle/>
+<div id='projects'>
+  <Projects projects={withContent} client:idle />
 </div>
