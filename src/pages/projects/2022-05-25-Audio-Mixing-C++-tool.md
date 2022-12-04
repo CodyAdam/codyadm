@@ -7,4 +7,6 @@ tags: ~
 value: 1
 thumbnails: ~
 hide: true
+stack:
+  - c++
 ---
