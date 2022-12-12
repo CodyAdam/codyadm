@@ -9,8 +9,7 @@ tags:
   - capgemini
   - group project
 stack: 
-  - c#
-  - unity
+  - vue
 value: 1
 coauthors:
   - Leo-paul Huar 

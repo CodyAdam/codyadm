@@ -8,6 +8,9 @@ tags:
   - hackathon
   - group project
   - vr
+stack:
+  - unreal engine
+  - blender
 value: 2
 thumbnails: ~
 coauthors:

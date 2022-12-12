@@ -8,7 +8,8 @@ tags:
   - tool
 stack: 
   - react
-  - ts
+  - typescript
+  - python
 value: 1
 thumbnails: ~
 repo: https://github.com/CodyAdam/irkurk-lang

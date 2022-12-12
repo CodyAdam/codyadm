@@ -6,6 +6,7 @@ sumary: A desktop smart chatbot application with definitions, translations, TTS 
 tags: 
   - ai
   - scrum
+  - agile
   - group project
   - automation
   - bot

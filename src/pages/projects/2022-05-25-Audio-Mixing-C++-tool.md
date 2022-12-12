@@ -9,4 +9,5 @@ thumbnails: ~
 hide: true
 stack:
   - c++
+  - cmake
 ---

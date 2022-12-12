@@ -9,15 +9,21 @@ tags:
   - api
   - microservices
   - database
+  - webhooks
+  - professional
 stack:
-  - next.js
+  - nextjs
   - vercel
   - prisma
-  - stripe api
+  - stripe
   - planetscale
-  - tailwindcss
-  - next-auth
-  - ts
+  - tailwind
+  - nextauth
+  - typescript
+  - wordpress
+  - mysql
+  - php
+  - socketio
 value: 4
 thumbnails: 
   - /md/cda-booking.png

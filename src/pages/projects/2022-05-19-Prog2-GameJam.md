@@ -7,6 +7,7 @@ tags:
   - game
   - game jam
   - graphic design
+  - group project
 stack:
   - c++
   - sdl2

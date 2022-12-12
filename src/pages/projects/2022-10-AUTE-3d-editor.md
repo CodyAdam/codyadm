@@ -7,9 +7,11 @@ tags:
   - web app
   - tool
 stack:
-  - tree.js
-  - tailwindcss
-  - ts
+  - threejs
+  - tailwind
+  - vercel
+  - typescript
+  - uml
 value: 3
 thumbnails: 
   - /md/aute.png

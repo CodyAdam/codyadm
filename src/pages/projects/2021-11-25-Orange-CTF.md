@@ -6,6 +6,9 @@ sumary: A cyber security CTF competition organized by Orange.
 tags: 
   - ctf
   - security
+stack:
+  - bash
+  - linux
 value: 1
 thumbnails: ~
 rank: 42/69

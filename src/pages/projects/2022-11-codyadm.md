@@ -9,8 +9,9 @@ stack:
   - astro
   - tailwind
   - react
-  - ts
-  - node
+  - typescript
+  - nodejs
+  - daisyui
 value: 3
 thumbnails: 
   - /md/codyadm.png

@@ -10,8 +10,6 @@ tags:
   - tool
 stack: 
   - python
-  - matplotlib
-  - numpy
   - opencv
   - knearest model
 value: 3

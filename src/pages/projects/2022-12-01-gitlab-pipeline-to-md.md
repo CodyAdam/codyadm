@@ -8,7 +8,9 @@ coauthors:
   - Thomas Delapart
 tags: 
   - parsing
-  - documentation
+  - automation
+  - tool
+  - script
   - group project
 value: 3
 stack: 

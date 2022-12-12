@@ -9,9 +9,9 @@ tags:
   - full stack
 stack:
   - vue
-  - tailwindcss
-  - js
-  - nuxt.js
+  - tailwind
+  - javascript
+  - nuxtjs
 value: 1
 thumbnails: ~
 coauthors:

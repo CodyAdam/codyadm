@@ -7,6 +7,9 @@ tags:
   - challenge
   - hackathon
   - group project
+stack:
+  - illustrator
+  - photoshop
 value: 2
 thumbnails: ~
 rank: 1/3
