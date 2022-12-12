@@ -47,13 +47,13 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
           </div>
         )}
         {size == 'md' && (
-          <div className='flex leading-4 text-primary w-fit card bg-base-100 border border-neutral-focus shadow-xl p-5 flex-wrap overflow-hidden text-left glow-card group'>
-            <div className=' flex flex-col h-full items-start gap-5 z-10'>
+          <div className='flex leading-4 text-primary w-fit card bg-base-100 border border-neutral-focus shadow-xl p-5 flex-wrap overflow-hidden text-left glow-card group h-fit'>
+            <div className=' flex flex-col h-full items-start gap-7 z-10'>
               <h1 className='inline shrink-1 font-display text-xl sm:text-2xl font-bold'>
                 {project.frontmatter.title}
               </h1>
               {project.frontmatter.tags && (
-                <div className='flex gap-2 flex-wrap justify-start -mt-3'>
+                <div className='flex gap-2 flex-wrap justify-start -mt-4'>
                   {project.frontmatter.tags.map((tag) => (
                     <span className='badge-sm badge' key={tag}>
                       {tag}
@@ -67,13 +67,13 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
           </div>
         )}
         {size == 'lg' && (
-          <div className='flex leading-4 text-primary h-0 min-h-[30rem] card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card group'>
-            <div className=' flex flex-col lg:w-1/2 h-full lg:items-start items-center gap-10 z-10'>
+          <div className='flex leading-4 text-primary min-h-[30rem] card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card group h-fit'>
+            <div className=' flex flex-col lg:w-1/2 min-h-[30rem] h-full lg:items-start items-center gap-7 z-10'>
               <h1 className='inline shrink-1 font-display text-xl sm:text-3xl font-bold'>
                 {project.frontmatter.title}
               </h1>
               {project.frontmatter.tags && (
-                <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
+                <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-4'>
                   {project.frontmatter.tags.map((tag) => (
                     <span className='badge-sm badge' key={tag}>
                       {tag}
@@ -92,19 +92,19 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               <img
                 src={project.frontmatter.thumbnails[0]}
                 alt=''
-                className='absolute inset-0 opacity-80 h-2/3 mt-auto w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
+                className='mt-auto absolute inset-0 opacity-80 h-2/3 w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
               />
             )}
           </div>
         )}
         {size == 'xl' && (
-          <div className='flex leading-4 text-primary min-h-[30rem] h-0 card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card-accent group'>
-            <div className=' flex flex-col lg:w-1/2 h-full lg:items-start items-center gap-10 z-10'>
+          <div className='flex leading-4 text-primary min-h-[30rem] card bg-base-100 border border-neutral-focus px-5 py-6 lg:px-7 sm:py-10 w-full flex-wrap overflow-hidden text-center lg:text-left glow-card-accent group h-fit'>
+            <div className=' flex flex-col lg:w-1/2 h-full min-h-[30rem] lg:items-start items-center gap-7 z-10'>
               <h1 className='inline shrink-1 font-display text-xl sm:text-3xl font-bold'>
                 {project.frontmatter.title}
               </h1>
               {project.frontmatter.tags && (
-                <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
+                <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-4'>
                   {project.frontmatter.tags.map((tag) => (
                     <span className='badge-sm badge' key={tag}>
                       {tag}
@@ -123,7 +123,7 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               <img
                 src={project.frontmatter.thumbnails[0]}
                 alt=''
-                className='absolute inset-0 opacity-80 h-2/3 w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
+                className='mt-auto absolute inset-0 opacity-80 h-2/3 w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
               />
             )}
           </div>
