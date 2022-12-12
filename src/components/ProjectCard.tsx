@@ -1,6 +1,7 @@
 import { MarkdownInstance } from 'astro';
 import { Drawer } from './Drawer';
 import { LazyProse } from './LazyProse';
+import { TeckTags } from './TechTags';
 import { TimeDot } from './TimeDot';
 
 export type WithContent<T> = T & { content: string };
@@ -47,17 +48,20 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
         )}
         {size == 'md' && (
           <div className='flex leading-4 text-primary w-fit card bg-base-100 border border-neutral-focus shadow-xl p-5 flex-wrap overflow-hidden text-left glow-card group'>
-            <div className=' flex flex-col h-full items-start gap-10 z-10'>
+            <div className=' flex flex-col h-full items-start gap-5 z-10'>
               <h1 className='inline shrink-1 font-display text-xl sm:text-2xl font-bold'>
                 {project.frontmatter.title}
               </h1>
               {project.frontmatter.tags && (
-                <div className='flex gap-2 flex-wrap justify-start -mt-7'>
+                <div className='flex gap-2 flex-wrap justify-start -mt-3'>
                   {project.frontmatter.tags.map((tag) => (
-                    <span className='badge-sm badge' key={tag}>{tag}</span>
+                    <span className='badge-sm badge' key={tag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               )}
+              <TeckTags techs={project.frontmatter.stack} />
               <LearnMore />
             </div>
           </div>
@@ -71,13 +75,16 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               {project.frontmatter.tags && (
                 <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
                   {project.frontmatter.tags.map((tag) => (
-                    <span className='badge-sm badge' key={tag}>{tag}</span>
+                    <span className='badge-sm badge' key={tag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               )}
               <p className='opacity-60 text-sm '>{project.frontmatter.sumary}</p>
-
-              <div className='px-3 py-2 border-primary/5 transition-all lg:mt-auto group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
+              <div className='lg:my-auto'></div>
+              <TeckTags techs={project.frontmatter.stack} />
+              <div className='px-3 py-2 border-primary/5 transition-all group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
                 <LearnMore />
               </div>
             </div>
@@ -99,12 +106,15 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               {project.frontmatter.tags && (
                 <div className='flex gap-2 flex-wrap justify-center lg:justify-start -mt-7'>
                   {project.frontmatter.tags.map((tag) => (
-                    <span className='badge-sm badge' key={tag}>{tag}</span>
+                    <span className='badge-sm badge' key={tag}>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               )}
               <p className='opacity-60 text-sm '>{project.frontmatter.sumary}</p>
-
+              <div className='lg:my-auto'></div>
+              <TeckTags techs={project.frontmatter.stack} />
               <div className='px-3 py-2 border-primary/5 transition-all lg:mt-auto group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
                 <LearnMore />
               </div>
@@ -113,7 +123,7 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               <img
                 src={project.frontmatter.thumbnails[0]}
                 alt=''
-                className='absolute inset-0 opacity-80 h-2/3 mt-auto w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
+                className='absolute inset-0 opacity-80 h-2/3 w-full mask-fade-b object-cover lg:mask-fade-r lg:h-full lg:w-2/3 lg:mt-0 lg:ml-auto'
               />
             )}
           </div>
