@@ -30,7 +30,7 @@ export function Courses() {
         cat = allCourses;
     }
     setCategories(cat);
-    setMax(cat.reduce((acc, category) => acc + category.hours, 0));
+    setMax(Math.max(...cat.map((category) => category.hours)));
   }, [year]);
 
   return (
@@ -38,7 +38,7 @@ export function Courses() {
       <CircleGroupButton
         value={year === null ? 'all courses' : year.toString()}
         options={Object.values(YearFilter)}
-        onChange={(value : YearFilter) => {
+        onChange={(value: YearFilter) => {
           let cat = allCourses;
           switch (value) {
             case YearFilter.y2019:
@@ -53,9 +53,9 @@ export function Courses() {
             default:
               cat = allCourses;
           }
-          
+
           setCategories(cat);
-          setMax(cat.reduce((acc, category) => acc + category.hours, 0));
+          setMax(Math.max(...cat.map((category) => category.hours)));
         }}
       />
       {categories.map((category) => (
@@ -66,7 +66,7 @@ export function Courses() {
           </div>
           <div className='collapse-content flex flex-col gap-3'>
             {category.courses.map((course) => (
-              <SubEntry key={course.acronyme + course.sem} course={course} max={category.hours} />
+              <SubEntry key={course.acronyme + course.sem} course={course} max={Math.max(...category.courses.map((course) => course.hours))} />
             ))}
           </div>
         </div>
