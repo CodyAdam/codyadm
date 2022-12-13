@@ -3,7 +3,12 @@ layout: ../../layouts/ProjectLayout.astro
 title: WallCaster
 date: 2023/01
 sumary: It is a web application that allows users to display streams of tweets on any screen. It is fully dockerized and split into microservices. It uses websockets to display tweets in real time with a admin dashboard to manage the streams.
-coauthors: string[] OPTIONAL
+coauthors: 
+  - Louis-Gabriel
+  - Killian
+  - Kouamé
+  - Yanis Bouger
+  - Bastien
 tags: 
   - web app
   - tool
@@ -25,8 +30,7 @@ stack:
   - nodejs
   - socketio
   - astro
-thumbnails: string[] OPTIONAL
+# thumbnails: 
 hide: true
-rank: number OPTIONAL
-repo: string OPTIONAL
+# repo: 
 ---

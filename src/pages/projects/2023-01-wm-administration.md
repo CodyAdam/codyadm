@@ -27,7 +27,7 @@ stack:
   - daisyui
   - typeorm
   - typescript
-thumbnails: string[] OPTIONAL
+# thumbnails: string[] OPTIONAL
 hide: true
-repo: string OPTIONAL
+# repo: string OPTIONAL
 ---

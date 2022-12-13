@@ -22,8 +22,8 @@ stack:
   - nextjs
   - tailwind
   - daisyui
-thumbnails: string[] OPTIONAL
+# thumbnails: string[] OPTIONAL
 hide: true
-rank: number OPTIONAL
-repo: string OPTIONAL
+# rank: number OPTIONAL
+# repo: string OPTIONAL
 ---

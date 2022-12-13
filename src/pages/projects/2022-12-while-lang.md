@@ -22,7 +22,7 @@ stack:
   - antlr
   - java
   - python
-thumbnails: string[] OPTIONAL
+# thumbnails: string[] OPTIONAL
 hide: true
-repo: string OPTIONAL
+# repo: string OPTIONAL
 ---
