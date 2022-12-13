@@ -115,7 +115,7 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
               <p className='opacity-60 text-sm '>{project.frontmatter.sumary}</p>
               <div className='lg:my-auto'></div>
               <TeckTags techs={project.frontmatter.stack} />
-              <div className='px-3 py-2 border-primary/5 transition-all lg:mt-auto group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
+              <div className='px-3 py-2 border-primary/5 transition-all group-hover:border-primary/50 border rounded-full group-hover:backdrop-blur-md'>
                 <LearnMore />
               </div>
             </div>
