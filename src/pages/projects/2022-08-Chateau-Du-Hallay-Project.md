@@ -16,37 +16,39 @@ stack:
   - vercel
   - prisma
   - stripe
-  - planetscale
   - tailwind
   - nextauth
   - typescript
   - wordpress
   - mysql
   - php
-  - socketio
 value: 4
 thumbnails: 
   - /md/cda-booking.png
 ---
 
-Full stack web application for a hotel management company in about 3 months.
+Full stack web application for a hotel management company made in 3 months.
 
 # Features
 
-- administration dashboard
-- reservations and customers handling
-- online booking
-- schedule planning
-- microservices tracking
-- billing automation
+  - Administration dashboard
+  - Reservations and customers handling
+  - Online booking and online payment
+  - Schedule planning
+  - Microservices tracking
+  - Billing automation
 
-# Infrastructure
 
-- Database : [Planetscale](https://planetscale.com/) with [Prisma](https://www.prisma.io/) 
-- API : [Next.js](https://nextjs.org/) as serverless with [Stripe API](https://stripe.com/docs/api) for payments 
-- Hosting : [Vercel](https://vercel.com/)
-- Authentication : [NextAuth.js](https://next-auth.js.org/)
-- CSS : [TailwindCSS](https://tailwindcss.com/)
+# Technology stack
+
+  - SQL ([MySQL](https://www.mysql.com/))
+  - [NextJS](https://nextjs.org/) (Frontend React frameworks)
+  - [NextJS](https://nextjs.org/) Route API (Backend serverless functions with [Vercel](https://vercel.com/))
+  - [Stipe API](https://stripe.com/docs/api) (Payment)
+  - [NextAuthJS](https://next-auth.js.org/) (Auth)
+  - [Prisma](https://www.prisma.io/)  Client (ORM)
+  - [PHP](https://www.php.net/) ([WordPress Plugin](https://developer.wordpress.org/plugins/intro/))
+  - [TailwindCSS](https://tailwindcss.com/) (CSS)
 
 
 # Screenshots
