@@ -7,7 +7,7 @@ const techToLogo = {
   nest: 'https://api.iconify.design/simple-icons:nestjs.svg',
   graphql: 'https://api.iconify.design/teenyicons:graphql-outline.svg',
   mongodb: 'https://api.iconify.design/teenyicons:mongodb-outline.svg',
-  postgres: 'https://api.iconify.design/simple-icons:postgresql.svg',
+  postgresql: 'https://api.iconify.design/simple-icons:postgresql.svg',
   docker: 'https://api.iconify.design/teenyicons:docker-outline.svg',
   typescript: 'https://api.iconify.design/teenyicons:typescript-outline.svg',
   javascript: 'https://api.iconify.design/teenyicons:javascript-outline.svg',
@@ -50,6 +50,15 @@ const techToLogo = {
   nextauth: 'https://api.iconify.design/ic:round-shield.svg',
   wordpress: 'https://api.iconify.design/fa6-brands:wordpress-simple.svg',
   autohotkey: 'https://api.iconify.design/file-icons:autohotkey.svg',
+  grafana: 'https://api.iconify.design/logos:grafana.svg',
+  swagger: 'https://api.iconify.design/simple-icons:swagger.svg',
+  nestjs: 'https://api.iconify.design/vscode-icons:file-type-nestjs.svg',
+  rabbitmq: 'https://api.iconify.design/logos:rabbitmq-icon.svg',
+  quarkus : 'https://api.iconify.design/logos:quarkus-icon.svg',
+  maildev: 'https://api.iconify.design/ic:outline-email.svg',
+  nginx: 'https://api.iconify.design/simple-icons:nginx.svg',
+  prometheus: 'https://api.iconify.design/vscode-icons:file-type-prometheus.svg',
+  k6: 'https://api.iconify.design/simple-icons:k6.svg',
 };
 
 const firstLetterToUpper = (str: string) =>
