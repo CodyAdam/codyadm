@@ -3,28 +3,17 @@ import { SVGProps, useState } from 'react';
 type Sort = 'time' | 'relevance';
 
 export default function ProjectFilter({ filter, setFilter }: { filter: number; setFilter: (filter: number) => void }) {
+  let highligtedWord = 'all';
+  if (filter >= 4) highligtedWord = 'only the best';
+  else if (filter >= 3) highligtedWord = 'only good';
+  else if (filter >= 2) highligtedWord = 'some';
+  else if (filter >= 1) highligtedWord = 'all';
+
   return (
     <div className='w-full flex-col flex gap-10 items-center'>
-      {filter == 4 && (
-        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
-          Show <span className='font-bold text-4xl text-secondary px-1'>only the best</span> projects
-        </h1>
-      )}
-      {filter == 3 && (
-        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
-          Show <span className='font-bold text-4xl text-secondary px-1'>good</span> projects
-        </h1>
-      )}
-      {filter == 2 && (
-        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
-          Show <span className='font-bold text-4xl text-secondary px-1'>some</span> projects
-        </h1>
-      )}
-      {filter == 1 && (
-        <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
-          Show <span className='font-bold text-4xl text-secondary px-1'>all</span> projects
-        </h1>
-      )}
+      <h1 className='font-semibold text-3xl font-display text-primary w-full text-center'>
+        Show <span className='font-bold text-4xl text-secondary px-1'>{highligtedWord}</span> projects
+      </h1>
       <div className='max-w-3xl w-full'>
         <input
           type='range'
@@ -32,9 +21,14 @@ export default function ProjectFilter({ filter, setFilter }: { filter: number; s
           max='4'
           value={filter}
           className='range range-secondary w-full'
-          step='1'
+          step='.001'
           onChange={(e) => {
-            setFilter(parseInt(e.target.value));
+            setFilter(parseFloat(e.target.value));
+          }}
+          onBlur={() => {
+            console.log("blur", filter);
+            
+            setFilter(Math.round(filter));
           }}
         />
         <div className='w-full flex justify-between text-xs px-2 select-none '>

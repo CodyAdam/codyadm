@@ -59,6 +59,7 @@ const techToLogo = {
   nginx: 'https://api.iconify.design/simple-icons:nginx.svg',
   prometheus: 'https://api.iconify.design/vscode-icons:file-type-prometheus.svg',
   k6: 'https://api.iconify.design/simple-icons:k6.svg',
+  typeorm: 'https://api.iconify.design/logos:typeorm.svg',
 };
 
 const firstLetterToUpper = (str: string) =>
@@ -88,13 +89,18 @@ const TechTag = ({ tech }: { tech: string }) => {
   if (tech in techToLogo)
     return (
       <div
+
         style={{
           maskImage: `url(${techToLogo[tech]})`,
           maskSize: 'contain',
           maskRepeat: 'no-repeat',
           maskPosition: 'center',
+          WebkitMaskImage: `url(${techToLogo[tech]})`,
+          WebkitMaskSize: 'contain',
+          WebkitMaskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
         }}
-        className='w-full h-full absolute bg-white '
+        className='w-full h-full absolute bg-white'
       ></div>
     );
 
