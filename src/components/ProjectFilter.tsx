@@ -26,9 +26,7 @@ export default function ProjectFilter({ filter, setFilter }: { filter: number; s
             setFilter(parseFloat(e.target.value));
           }}
           onBlur={() => {
-            console.log("blur", filter);
-            
-            setFilter(Math.round(filter));
+            setFilter(Math.floor(filter));
           }}
         />
         <div className='w-full flex justify-between text-xs px-2 select-none '>

@@ -30,7 +30,7 @@ export function Projects({ projects }: { projects: WithContent<MarkdownInstance<
           </div>
           <div className='flex grow container flex-col w-full gap-20 md:gap-20 items-start justify-between pl-[3rem] sm:pl-[8rem] max-w-6xl'>
             {projects
-              .filter((project) => project.frontmatter.value >= filter)
+              .filter((project) => project.frontmatter.value >= Math.floor(filter))
               .map((project, i) => {
                 let size: Size = 'sm';
                 switch (project.frontmatter.value) {
