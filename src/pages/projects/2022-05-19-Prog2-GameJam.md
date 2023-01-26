@@ -12,7 +12,7 @@ stack:
   - c++
   - sdl2
   - cmake
-value: 4
+value: 3
 thumbnails: 
   - /md/bounce-slide.png
 coauthors: 
