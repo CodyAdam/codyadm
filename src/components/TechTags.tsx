@@ -78,14 +78,14 @@ export const TeckTags = ({ techs }: { techs: string[] }) => {
           className='w-8 h-8 shrink-0 hover:scale-125 hover:-translate-y-1 transition-all tooltip tooltip-primary opacity-60 hover:opacity-100 duration-75'
           data-tip={firstLetterToUpper(tech)}
         >
-          <TechTag tech={tech} />
+          <Logo tech={tech} />
         </div>
       ))}
     </div>
   );
 };
 
-const TechTag = ({ tech }: { tech: string }) => {
+export const Logo = ({ tech }: { tech: string }) => {
   if (tech in techToLogo)
     return (
       <div

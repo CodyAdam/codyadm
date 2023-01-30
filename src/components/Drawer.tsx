@@ -1,4 +1,6 @@
 import IcSharpChevronLeft from './ico/IcSharpChevronLeft';
+import MdiGithub from './ico/MdiGithub';
+import { Logo } from './TechTags';
 
 type Props = {
   title?: String;
@@ -6,9 +8,10 @@ type Props = {
   id: string;
   content: React.ReactNode;
   children: React.ReactNode;
+  repo?: string;
 };
 
-export function Drawer({ title, id, className, children, content }: Props) {
+export function Drawer({ title, id, className, children, content, repo }: Props) {
   return (
     <div className='drawer drawer-end overflow-visible h-fit'>
       <input id={'drawer-' + id} type='checkbox' className='drawer-toggle' />
@@ -28,7 +31,14 @@ export function Drawer({ title, id, className, children, content }: Props) {
               <h1 className='text-4xl font-display font-semibold'>{title}</h1>
             </div>
           </div>
-          <div className='m-10 drawer-lazy-content'>{content}</div>
+          {repo && <div className='mx-10 -my-5 p-3 rounded-md hover:bg-black/10 hover:text-white transition-all text-lg'>
+            <a href={repo} className="flex gap-5 items-center" target="_blank" rel="noreferrer">
+              <MdiGithub className='h-10 w-10'/>
+              Github Repository
+            </a>
+          </div>
+          }
+          <div className='mx-10 drawer-lazy-content'>{content}</div>
         </div>
       </div>
     </div>

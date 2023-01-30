@@ -39,6 +39,7 @@ export function ProjectCard({ project, size = 'sm' }: Props) {
             <LazyProse html={project.content} />
           </div>
         }
+        repo={project.frontmatter.repo}
       >
         {size == 'sm' && (
           <div className='flex gap-4 leading-4 text-neutral-focus w-full flex-wrap overflow-hidden'>
