@@ -31,7 +31,7 @@ export function Drawer({ title, id, className, children, content, repo }: Props)
               <h1 className='text-4xl font-display font-semibold'>{title}</h1>
             </div>
           </div>
-          {repo && <div className='mx-10 -my-5 p-3 rounded-md hover:bg-black/10 hover:text-white transition-all text-lg'>
+          {repo && <div className='mx-10 -my-5 p-3 rounded-md hover:bg-black/10 border border-white/20 hover:text-white transition-all text-lg'>
             <a href={repo} className="flex gap-5 items-center" target="_blank" rel="noreferrer">
               <MdiGithub className='h-10 w-10'/>
               Github Repository

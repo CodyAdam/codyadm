@@ -24,7 +24,6 @@ stack:
   - python
 thumbnails: 
   - /md/whilec.png
-hide: false
 repo: https://github.com/CodyAdam/whilec
 ---
 
